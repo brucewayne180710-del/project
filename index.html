@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CULT & HABITAT - Spaces for a Better You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold-primary: #D4A574;
+            --gold-dark: #8B6F47;
+            --cream: #FAF8F3;
+            --charcoal: #2B2B2B;
+            --light-border: #E8E3D8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--cream) 0%, #fff9f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .headline {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .headline-accent {
+            color: var(--gold-primary);
+        }
+
+        .core-message {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        /* Credibility Section */
+        .credibility {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            width: 100%;
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(212, 165, 116, 0.06);
+            border-radius: 8px;
+            border: 1px solid var(--light-border);
+        }
+
+        .credential {
+            text-align: center;
+        }
+
+        .credential-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            margin-bottom: 8px;
+        }
+
+        .credential-label {
+            font-size: 0.95rem;
+            color: #777;
+            text-transform: capitalize;
+            letter-spacing: 0.03em;
+        }
+
+        /* CTA Section */
+        .cta-block {
+            margin-top: 60px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 48px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gold-primary);
+            color: white;
+            box-shadow: 0 4px 16px rgba(212, 165, 116, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-dark);
+            box-shadow: 0 8px 24px rgba(212, 165, 116, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold-primary);
+            border: 2px solid var(--gold-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold-primary);
+            color: white;
+        }
+
+        /* Product Preview Section */
+        .products-section {
+            background: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--cream);
+            padding: 40px 30px;
+            border-radius: 4px;
+            border: 1px solid var(--light-border);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            border-color: var(--gold-primary);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+        }
+
+        .product-desc {
+            font-size: 0.95rem;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold-primary);
+            margin: 30px auto;
+        }
+
+        /* Collections Display */
+        .collection-block {
+            margin-bottom: 60px;
+            padding: 40px;
+            background: var(--cream);
+            border: 1px solid var(--light-border);
+            border-radius: 4px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .collection-header {
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--gold-primary);
+            padding-bottom: 20px;
+        }
+
+        .collection-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+
+        .collection-subtitle {
+            font-size: 1rem;
+            color: #777;
+            font-weight: 400;
+        }
+
+        .designs-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .design-tag {
+            background: white;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .design-tag:hover {
+            background: var(--gold-primary);
+            color: white;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            max-width: 800px;
+            margin: 60px auto 0;
+            padding: 60px 40px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .contact-form {
+            margin-top: 40px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+            text-transform: capitalize;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 16px;
+            font-size: 1rem;
+            border: 1px solid var(--light-border);
+            border-radius: 4px;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #555;
+            cursor: pointer;
+            font-weight: 400;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--gold-primary);
+        }
+
+        .btn.full-width {
+            width: 100%;
+            margin-top: 24px;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 16px;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .collection-block {
+                padding: 30px 20px;
+                margin-bottom: 40px;
+            }
+
+            .collection-title {
+                font-size: 1.4rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+
+            .designs-grid {
+                gap: 8px;
+            }
+
+            .design-tag {
+                font-size: 0.85rem;
+                padding: 8px 12px;
+            }
+
+            .contact-section {
+                padding: 40px 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .logo {
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .headline {
+            animation-delay: 0.2s;
+        }
+
+        .core-message {
+            animation-delay: 0.4s;
+        }
+
+        .credibility {
+            animation-delay: 0.6s;
+        }
+
+        .cta-block {
+            animation-delay: 0.8s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px;
+                min-height: auto;
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+
+            .logo {
+                width: 140px;
+                margin-bottom: 40px;
+            }
+
+            .headline {
+                margin-bottom: 24px;
+            }
+
+            .core-message {
+                margin-bottom: 40px;
+            }
+
+            .credibility {
+                gap: 24px;
+                padding: 32px 24px;
+            }
+
+            .credential-number {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 14px 36px;
+                font-size: 1rem;
+                width: 100%;
+            }
+
+            .cta-block {
+                margin-top: 40px;
+                flex-direction: column;
+            }
+
+            .products-section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <svg class="logo" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Logo Group -->
+                <g>
+                    <!-- Arches -->
+                    <defs>
+                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#E8D4B8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8B6F47;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Center Arch -->
+                    <path d="M 600 200 Q 700 200 700 400 L 700 600 Q 700 700 600 750 Q 500 700 500 600 L 500 400 Q 500 200 600 200" 
+                          fill="url(#goldGradient)" stroke="#C4A574" stroke-width="8"/>
+                    
+                    <!-- Left Arch -->
+                    <path d="M 350 300 Q 420 300 420 450 L 420 650 Q 420 750 350 800 Q 280 750 280 650 L 280 450 Q 280 300 350 300" 
+                          fill="url(#goldGradient)" stroke="#C4A574" stroke-width="8"/>
+                    
+                    <!-- Right Arch -->
+                    <path d="M 850 300 Q 920 300 920 450 L 920 650 Q 920 750 850 800 Q 780 750 780 650 L 780 450 Q 780 300 850 300" 
+                          fill="url(#goldGradient)" stroke="#C4A574" stroke-width="8"/>
+                    
+                    <!-- Base Line -->
+                    <line x1="250" y1="820" x2="950" y2="820" stroke="#8B6F47" stroke-width="12"/>
+                </g>
+            </svg>
+
+            <h1 class="headline">
+                Design Your <span class="headline-accent">Perfect Interior</span>
+            </h1>
+
+            <p class="core-message">
+                We create premium surface solutions—from elegant laminates to stunning acrylics and doors—that transform living spaces into personal sanctuaries. Every design choice reflects our commitment to quality, durability, and aesthetic excellence. Whether you're an architect, designer, or homeowner, we provide the materials that turn vision into reality.
+            </p>
+
+            <div class="credibility">
+                <div class="credential">
+                    <div class="credential-number">71+</div>
+                    <div class="credential-label">Premium Designs</div>
+                </div>
+                <div class="credential">
+                    <div class="credential-number">10+</div>
+                    <div class="credential-label">Architect Partners</div>
+                </div>
+                <div class="credential">
+                    <div class="credential-number">3</div>
+                    <div class="credential-label">Product Categories</div>
+                </div>
+                <div class="credential">
+                    <div class="credential-number">6H</div>
+                    <div class="credential-label">Scratch Resistance</div>
+                </div>
+            </div>
+
+            <div class="cta-block">
+                <button class="btn btn-primary" onclick="document.querySelector('.products-section').scrollIntoView({behavior: 'smooth'})">
+                    Explore Collections
+                </button>
+                <button class="btn btn-secondary" onclick="alert('Connect with our design specialists')">
+                    Schedule Consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="section-header">
+            <h2 class="section-title">Our Collections</h2>
+            <p class="section-description">
+                Premium materials across 4 categories—71+ designs to match every aesthetic and budget
+            </p>
+        </div>
+
+        <!-- SATVARIO Collection -->
+        <div class="collection-block">
+            <div class="collection-header">
+                <h3 class="collection-title">SATVARIO — 1mm Premium Laminates</h3>
+                <p class="collection-subtitle">The complete luxury laminate range with 30+ finishes</p>
+            </div>
+            <div class="designs-grid">
+                <div class="design-tag">Digital</div>
+                <div class="design-tag">Synchronized Textured Veneer</div>
+                <div class="design-tag">Synchronized Textured Wood</div>
+                <div class="design-tag">Synchronized Textured Marble</div>
+                <div class="design-tag">Polished Veneer</div>
+                <div class="design-tag">Natural Bamboo</div>
+                <div class="design-tag">Woven Jute</div>
+                <div class="design-tag">Zero Matt Veneer</div>
+                <div class="design-tag">Divine Cedar</div>
+                <div class="design-tag">Chiffon</div>
+                <div class="design-tag">Flute Matt</div>
+                <div class="design-tag">Fiber Wood</div>
+                <div class="design-tag">Lauren Oak</div>
+                <div class="design-tag">Jatoba</div>
+                <div class="design-tag">+ 16 More Finishes</div>
+            </div>
+        </div>
+
+        <!-- SAGA Collection -->
+        <div class="collection-block">
+            <div class="collection-header">
+                <h3 class="collection-title">SAGA — 0.8mm Value Laminates</h3>
+                <p class="collection-subtitle">Budget-conscious without compromising quality</p>
+            </div>
+            <div class="designs-grid">
+                <div class="design-tag">Digital</div>
+                <div class="design-tag">Flute</div>
+                <div class="design-tag">Shimmer</div>
+                <div class="design-tag">Glossy</div>
+                <div class="design-tag">Shein</div>
+                <div class="design-tag">Silky</div>
+                <div class="design-tag">Glitter</div>
+                <div class="design-tag">Metallic</div>
+                <div class="design-tag">Solid</div>
+                <div class="design-tag">Gongalo Alves</div>
+                <div class="design-tag">Wooden</div>
+                <div class="design-tag">Velvet</div>
+                <div class="design-tag">+ 15 More Options</div>
+            </div>
+        </div>
+
+        <!-- SYNERGY Collection -->
+        <div class="collection-block">
+            <div class="collection-header">
+                <h3 class="collection-title">SYNERGY — Premium Acrylic Surfaces</h3>
+                <p class="collection-subtitle">6H anti-scratch with stunning visual finishes</p>
+            </div>
+            <div class="designs-grid">
+                <div class="design-tag">UV Mirror</div>
+                <div class="design-tag">Fluted Sparkle</div>
+                <div class="design-tag">Fluted Solid</div>
+                <div class="design-tag">Fluted Marble</div>
+                <div class="design-tag">Mirror</div>
+                <div class="design-tag">Marble</div>
+                <div class="design-tag">Sparkle</div>
+                <div class="design-tag">Metallic</div>
+                <div class="design-tag">Solid Matt</div>
+                <div class="design-tag">Solid Gloss</div>
+            </div>
+        </div>
+
+        <!-- Doors Collection -->
+        <div class="collection-block">
+            <div class="collection-header">
+                <h3 class="collection-title">Door Solutions</h3>
+                <p class="collection-subtitle">From flush to decorative—complete door options</p>
+            </div>
+            <div class="designs-grid">
+                <div class="design-tag">Flush Doors</div>
+                <div class="design-tag">Prelaminate Doors</div>
+                <div class="design-tag">Digital Skins</div>
+                <div class="design-tag">Texture Skins</div>
+                <div class="design-tag">Metallic Skins</div>
+                <div class="design-tag">Premium Skins</div>
+            </div>
+        </div>
+
+        <!-- Plywood Collection -->
+        <div class="collection-block">
+            <div class="collection-header">
+                <h3 class="collection-title">Engineered Wood & Plywood</h3>
+                <p class="collection-subtitle">Structural + aesthetic solutions</p>
+            </div>
+            <div class="designs-grid">
+                <div class="design-tag">Calibrated Plywood</div>
+                <div class="design-tag">Diamond BWP</div>
+                <div class="design-tag">Gold BWR</div>
+                <div class="design-tag">Flare Fire Retardant</div>
+                <div class="design-tag">Club Life</div>
+                <div class="design-tag">Shuttering Plywood</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Contact Form Section -->
+        <div class="contact-section">
+            <h2 class="section-title">Find Your Perfect Design</h2>
+            <p class="section-description">
+                Tell us about your project. Our design specialists will recommend the perfect collection + finishes for your vision.
+            </p>
+            
+            <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">I am a...</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select one</option>
+                            <option value="architect">Architect</option>
+                            <option value="designer">Interior Designer</option>
+                            <option value="contractor">Contractor / Builder</option>
+                            <option value="homeowner">Homeowner</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="project">Tell us about your project</label>
+                    <textarea id="project" name="project" rows="5" placeholder="What are you building? What finishes interest you?" required></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="collections">Which collections interest you? (Optional)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="collections" value="satvario"> SATVARIO (1mm Laminates)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="collections" value="saga"> SAGA (0.8mm Laminates)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="collections" value="synergy"> SYNERGY (Acrylics)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="collections" value="doors"> Door Solutions
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="collections" value="plywood"> Engineered Wood
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="collections" value="undecided"> Not sure yet
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary full-width">
+                    Request Design Consultation
+                </button>
+                <p class="form-note">We'll respond within 24 hours with tailored recommendations</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>CULT & HABITAT</strong></p>
+        <p>Spaces for a Better You</p>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">
+            Premium interior design materials | Laminates, Acrylics, Doors & Plywood
+        </p>
+    </footer>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const role = document.getElementById('role').value;
+            const project = document.getElementById('project').value;
+            
+            const collectionCheckboxes = document.querySelectorAll('input[name="collections"]:checked');
+            const collections = Array.from(collectionCheckboxes).map(cb => cb.value).join(', ');
+            
+            // Create email body
+            const emailBody = `
+New Design Consultation Request
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Role: ${role}
+
+Project Details:
+${project}
+
+Interested Collections: ${collections || 'Not specified'}
+
+---
+This form was submitted from CULT & HABITAT website.
+            `;
+            
+            // Option 1: Send via mailto (basic, but works)
+            const mailtoLink = `mailto:hello@culthabitat.com?subject=Design Consultation Request from ${encodeURIComponent(name)}&body=${encodeURIComponent(emailBody)}`;
+            window.location.href = mailtoLink;
+            
+            // Option 2: Log to console (for now, during development)
+            console.log('Form submitted:', {
+                name, email, phone, role, project, collections
+            });
+            
+            // Show confirmation
+            alert('Thank you! Opening your email client to send your consultation request. If it doesn\'t open, email us at hello@culthabitat.com');
+        }
+    </script>
+</body>
+</html>
