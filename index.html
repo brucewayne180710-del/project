@@ -1,971 +1,691 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CULT & HABITAT — Spaces for a Better You</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    :root{
-        --ink:#1c1a17;
-        --ink-soft:#514c45;
-        --cream:#faf7f1;
-        --cream-deep:#f2ede2;
-        --line:#e4ddce;
-        --gold:#b3894f;
-        --gold-deep:#8a6636;
-        --gold-pale:#e9d9bf;
-        --white:#ffffff;
-    }
-    html{scroll-behavior:smooth;}
-    body{
-        font-family:'Inter',sans-serif;
-        color:var(--ink);
-        background:var(--cream);
-        font-weight:400;
-        -webkit-font-smoothing:antialiased;
-    }
-    h1,h2,h3,h4,.serif{
-        font-family:'Playfair Display',serif;
-        font-weight:600;
-        letter-spacing:-0.01em;
-    }
-    a{color:inherit;}
-    img{max-width:100%; display:block;}
-    .eyebrow{
-        text-transform:uppercase;
-        letter-spacing:0.18em;
-        font-size:0.72rem;
-        font-weight:600;
-        color:var(--gold-deep);
-        margin-bottom:14px;
-        display:block;
-    }
-    .wrap{max-width:1280px; margin:0 auto; padding:0 40px;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f2ec" />
+  <meta name="description" content="CULT & HABITAT — considered surfaces and materials for thoughtfully designed spaces." />
+  <title>CULT & HABITAT — Spaces for a Better You</title>
 
-    /* ---------- NAV ---------- */
-    header.site-nav{
-        position:fixed; top:0; left:0; right:0; z-index:1000;
-        background:rgba(250,247,241,0.85);
-        backdrop-filter:blur(10px);
-        -webkit-backdrop-filter:blur(10px);
-        border-bottom:1px solid transparent;
-        transition:all .35s ease;
-    }
-    header.site-nav.scrolled{
-        border-bottom-color:var(--line);
-        box-shadow:0 4px 24px rgba(0,0,0,0.04);
-    }
-    .nav-inner{
-        display:flex; align-items:center; justify-content:space-between;
-        padding:14px 40px;
-        max-width:1280px; margin:0 auto;
-    }
-    .nav-logo{display:flex; align-items:center; gap:10px;}
-    .nav-logo img{height:42px; width:auto;}
-    .nav-logo span{
-        font-family:'Playfair Display',serif;
-        font-weight:700; font-size:1.15rem; letter-spacing:0.02em;
-    }
-    nav.nav-links{display:flex; gap:36px; align-items:center;}
-    nav.nav-links a{
-        font-size:0.88rem; font-weight:500; text-decoration:none;
-        color:var(--ink-soft); transition:color .2s ease; position:relative;
-    }
-    nav.nav-links a:hover{color:var(--gold-deep);}
-    .nav-cta{
-        background:var(--ink); color:var(--white)!important;
-        padding:11px 26px; border-radius:2px; font-size:0.85rem!important;
-        font-weight:600!important; letter-spacing:0.03em;
-        transition:background .25s ease;
-    }
-    .nav-cta:hover{background:var(--gold-deep);}
-    .nav-toggle{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
-    .nav-toggle span{width:24px; height:2px; background:var(--ink);}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
-    /* ---------- HERO ---------- */
-    .hero{
-        position:relative;
-        min-height:100vh;
-        display:flex; align-items:center;
-        overflow:hidden;
-    }
-    .hero-bg{
-        position:absolute; inset:0;
-        background:url('images/hero/hero-main.jpg') center 60%/cover no-repeat;
-    }
-    .hero-bg::after{
-        content:'';
-        position:absolute; inset:0;
-        background:linear-gradient(100deg, rgba(20,17,13,0.82) 0%, rgba(20,17,13,0.58) 42%, rgba(20,17,13,0.22) 75%, rgba(20,17,13,0.05) 100%);
-    }
-    .hero-content{
-        position:relative; z-index:2;
-        max-width:1280px; margin:0 auto; padding:0 40px;
-        width:100%;
-    }
-    .hero-inner{max-width:640px; padding-top:70px;}
-    .hero-logo{height:64px; width:auto; margin-bottom:36px; filter:drop-shadow(0 4px 20px rgba(0,0,0,0.25));}
-    .hero-eyebrow{
-        color:var(--gold-pale); text-transform:uppercase; letter-spacing:0.22em;
-        font-size:0.75rem; font-weight:600; margin-bottom:22px; display:block;
-    }
-    .hero h1{
-        color:var(--white); font-size:clamp(2.6rem,5.2vw,4.2rem);
-        line-height:1.08; margin-bottom:26px; letter-spacing:-0.02em;
-    }
-    .hero h1 em{color:var(--gold-pale); font-style:italic; font-weight:500;}
-    .hero p{
-        color:rgba(255,255,255,0.82); font-size:1.12rem; line-height:1.75;
-        margin-bottom:40px; max-width:520px; font-weight:300;
-    }
-    .hero-actions{display:flex; gap:16px; flex-wrap:wrap;}
-    .btn{
-        display:inline-flex; align-items:center; justify-content:center;
-        padding:16px 34px; font-size:0.92rem; font-weight:600;
-        letter-spacing:0.03em; text-decoration:none; border-radius:2px;
-        cursor:pointer; border:1px solid transparent; transition:all .25s ease;
-    }
-    .btn-gold{background:var(--gold); color:var(--white);}
-    .btn-gold:hover{background:var(--gold-deep); transform:translateY(-2px); box-shadow:0 10px 30px rgba(179,137,79,0.35);}
-    .btn-outline{background:transparent; color:var(--white); border-color:rgba(255,255,255,0.5);}
-    .btn-outline:hover{background:rgba(255,255,255,0.12); border-color:var(--white);}
-    .btn-dark{background:var(--ink); color:var(--white);}
-    .btn-dark:hover{background:var(--gold-deep);}
-
-    .hero-scroll{
-        position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
-        z-index:2; color:rgba(255,255,255,0.7); font-size:0.72rem;
-        text-transform:uppercase; letter-spacing:0.18em; text-align:center;
-    }
-    .hero-scroll .line{width:1px; height:34px; background:rgba(255,255,255,0.4); margin:10px auto 0; animation:scrollPulse 2s ease-in-out infinite;}
-    @keyframes scrollPulse{0%,100%{opacity:.3;} 50%{opacity:1;}}
-
-    /* ---------- SECTION SHELL ---------- */
-    section{padding:120px 0;}
-    .section-head{max-width:640px; margin-bottom:64px;}
-    .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
-    .section-head h2{font-size:clamp(2rem,3.6vw,2.8rem); line-height:1.15; margin-bottom:18px;}
-    .section-head p{color:var(--ink-soft); font-size:1.05rem; line-height:1.75; font-weight:300;}
-
-    /* ---------- SERVICES ---------- */
-    .services{background:var(--white);}
-    .service-grid{
-        display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
-        background:var(--line); border:1px solid var(--line);
-    }
-    .service-card{
-        background:var(--white); padding:44px 32px; transition:background .3s ease;
-    }
-    .service-card:hover{background:var(--cream);}
-    .service-num{
-        font-family:'Playfair Display',serif; font-style:italic; color:var(--gold);
-        font-size:1rem; margin-bottom:26px; display:block;
-    }
-    .service-card h3{font-size:1.25rem; margin-bottom:14px; font-weight:600;}
-    .service-card p{color:var(--ink-soft); font-size:0.92rem; line-height:1.7; font-weight:300;}
-
-    /* ---------- COLLECTIONS / TABS ---------- */
-    .collections{background:var(--cream-deep);}
-    .tab-bar{
-        display:flex; gap:8px; flex-wrap:wrap; border-bottom:1px solid var(--line);
-        margin-bottom:56px; padding-bottom:0;
-    }
-    .tab-btn{
-        background:none; border:none; cursor:pointer;
-        padding:16px 26px; font-family:'Inter',sans-serif; font-size:0.92rem;
-        font-weight:600; color:var(--ink-soft); position:relative;
-        letter-spacing:0.01em; transition:color .2s ease;
-    }
-    .tab-btn::after{
-        content:''; position:absolute; left:26px; right:26px; bottom:-1px; height:2px;
-        background:var(--gold); transform:scaleX(0); transition:transform .25s ease; transform-origin:left;
-    }
-    .tab-btn.active{color:var(--ink);}
-    .tab-btn.active::after{transform:scaleX(1);}
-    .tab-btn:hover{color:var(--ink);}
-
-    .tab-panel{display:none; animation:fadeIn .5s ease;}
-    .tab-panel.active{display:block;}
-    @keyframes fadeIn{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
-
-    .collection-feature{
-        display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px;
-        margin-bottom:64px; align-items:center;
-    }
-    .collection-feature img{
-        width:100%; height:460px; object-fit:cover; border-radius:2px;
-        box-shadow:0 30px 60px -20px rgba(28,26,23,0.25);
-    }
-    .collection-feature.reverse{grid-template-columns:0.9fr 1.1fr;}
-    .collection-feature.reverse img{order:2;}
-    .collection-feature-text .eyebrow{margin-bottom:16px;}
-    .collection-feature-text h3{font-size:2rem; margin-bottom:20px; line-height:1.2;}
-    .collection-feature-text p{color:var(--ink-soft); font-size:1.02rem; line-height:1.8; margin-bottom:28px; font-weight:300;}
-    .feature-stats{display:flex; gap:36px;}
-    .feature-stats div{border-left:2px solid var(--gold); padding-left:14px;}
-    .feature-stats b{display:block; font-family:'Playfair Display',serif; font-size:1.5rem;}
-    .feature-stats span{font-size:0.78rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.06em;}
-
-    .photo-grid{
-        display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:22px;
-    }
-    .photo-card{
-        background:var(--white); overflow:hidden; border-radius:2px;
-        transition:all .3s ease; box-shadow:0 2px 12px rgba(28,26,23,0.05);
-    }
-    .photo-card:hover{transform:translateY(-6px); box-shadow:0 24px 40px -16px rgba(28,26,23,0.22);}
-    .photo-card img{width:100%; height:230px; object-fit:cover;}
-    .photo-card figcaption{padding:16px 18px; font-size:0.9rem; font-weight:600;}
-    .photo-card figcaption .code{
-        display:block; font-weight:400; font-size:0.76rem; color:#9c948a;
-        margin-top:4px; letter-spacing:0.03em; font-family:'Inter',sans-serif;
-    }
-    .tab-footnote{
-        text-align:center; color:var(--ink-soft); font-style:italic; font-size:0.95rem;
-        margin-top:44px; font-family:'Playfair Display',serif;
+  <style>
+    :root {
+      --paper: #f5f2ec;
+      --white: #fffdf9;
+      --ink: #252820;
+      --muted: #77776e;
+      --olive: #62664d;
+      --olive-dark: #414633;
+      --line: #dedbd2;
+      --accent: #b49a70;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --max: 1280px;
     }
 
-    /* plywood tags panel */
-    .plywood-panel{
-        background:var(--ink); color:var(--white); border-radius:4px;
-        padding:56px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
     }
-    .plywood-panel h3{color:var(--white); font-size:1.8rem; margin-bottom:16px;}
-    .plywood-panel p{color:rgba(255,255,255,0.7); font-weight:300; line-height:1.8;}
-    .tag-list{display:flex; flex-wrap:wrap; gap:12px;}
-    .tag-pill{
-        border:1px solid rgba(255,255,255,0.25); color:rgba(255,255,255,0.9);
-        padding:11px 20px; border-radius:30px; font-size:0.86rem; font-weight:500;
-        transition:all .2s ease;
+    img { display: block; width: 100%; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    .container { width: min(var(--max), calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 10px;
+      font-weight: 700;
     }
-    .tag-pill:hover{background:var(--gold); border-color:var(--gold); color:var(--white);}
+    .serif { font-family: var(--serif); font-weight: 400; }
+    .muted { color: var(--muted); }
+    .section { padding: 110px 0; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 42px;
+    }
+    .section-head h2 {
+      margin: 12px 0 0;
+      font: 400 clamp(34px, 4vw, 54px)/1.12 var(--serif);
+      letter-spacing: -.035em;
+    }
+    .section-head p { max-width: 360px; color: var(--muted); line-height: 1.8; font-size: 13px; }
 
-    /* ---------- OUR WORK (placeholder for client photos) ---------- */
-    .work{background:var(--white);}
-    .work-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-    .work-placeholder{
-        aspect-ratio:4/5; border:1.5px dashed var(--line); border-radius:2px;
-        display:flex; flex-direction:column; align-items:center; justify-content:center;
-        gap:14px; background:
-            repeating-linear-gradient(135deg, var(--cream) 0 2px, transparent 2px 18px);
-        color:var(--ink-soft); text-align:center; padding:30px;
-        transition:border-color .25s ease;
+    /* Navigation */
+    .nav {
+      height: 82px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(245,242,236,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(37,40,32,.09);
     }
-    .work-placeholder:hover{border-color:var(--gold);}
-    .work-placeholder .icon{
-        width:46px; height:46px; border-radius:50%; border:1.5px solid var(--gold);
-        display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:1.3rem;
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
-    .work-placeholder .label{font-weight:600; font-size:0.9rem; color:var(--ink);}
-    .work-placeholder .sub{font-size:0.78rem; max-width:180px; line-height:1.5;}
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 200px; }
+    .brand img { width: 43px; height: 43px; object-fit: contain; }
+    .brand-name { font-size: 13px; letter-spacing: .15em; font-weight: 700; }
+    .brand-sub { margin-top: 4px; font-size: 8px; letter-spacing: .19em; color: var(--muted); }
+    .nav-links { display: flex; align-items: center; gap: clamp(18px, 3vw, 38px); }
+    .nav-links a { font-size: 11px; color: #4e5048; transition: color .2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      border: 1px solid var(--ink);
+      padding: 13px 18px;
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: .2s;
+    }
+    .nav-cta:hover { background: var(--ink); color: white; }
+    .menu-toggle { display: none; border: 0; background: none; font-size: 24px; }
 
-    /* ---------- WHY US ---------- */
-    .whyus{background:var(--cream-deep);}
-    .whyus-grid{display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;}
-    .whyus-list{display:flex; flex-direction:column; gap:28px; margin-top:32px;}
-    .whyus-item{display:flex; gap:20px;}
-    .whyus-item .mark{
-        flex:none; width:40px; height:40px; border-radius:50%; background:var(--gold);
-        color:var(--white); display:flex; align-items:center; justify-content:center;
-        font-family:'Playfair Display',serif; font-weight:700; font-size:1.05rem;
+    /* Hero */
+    .hero { padding: 26px 0 0; }
+    .hero-panel {
+      min-height: min(720px, calc(100svh - 110px));
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: end;
+      background: #777568;
+      color: white;
     }
-    .whyus-item h4{font-size:1.08rem; margin-bottom:6px; font-weight:600;}
-    .whyus-item p{color:var(--ink-soft); font-size:0.92rem; line-height:1.65; font-weight:300;}
-    .whyus-img{position:relative;}
-    .whyus-img img{border-radius:2px; box-shadow:0 30px 60px -20px rgba(28,26,23,0.25);}
-
-    /* ---------- CONTACT ---------- */
-    .contact{background:var(--ink); color:var(--white);}
-    .contact .section-head p{color:rgba(255,255,255,0.65);}
-    .contact .eyebrow{color:var(--gold-pale);}
-    .contact-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:70px;}
-    .contact-info h2{color:var(--white); font-size:2.3rem; margin-bottom:22px; line-height:1.2;}
-    .contact-info p{color:rgba(255,255,255,0.68); line-height:1.8; margin-bottom:36px; font-weight:300;}
-    .contact-line{display:flex; align-items:center; gap:16px; margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.12);}
-    .contact-line .ico{
-        width:42px; height:42px; border-radius:50%; border:1px solid var(--gold);
-        display:flex; align-items:center; justify-content:center; color:var(--gold-pale); flex:none;
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
-    .contact-line a{color:var(--white); text-decoration:none; font-weight:500;}
-    .contact-line a:hover{color:var(--gold-pale);}
-    .contact-line span.label{display:block; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,0.45); margin-bottom:4px;}
-
-    .contact-form-card{
-        background:var(--cream); border-radius:4px; padding:48px;
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(21,24,19,.65), rgba(21,24,19,.12) 78%),
+                  linear-gradient(0deg, rgba(21,24,19,.38), transparent 50%);
     }
-    .form-row{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px;}
-    .form-group{display:flex; flex-direction:column;}
-    .form-group.full{grid-column:1/-1;}
-    .form-group label{font-size:0.82rem; font-weight:600; margin-bottom:8px; color:var(--ink);}
-    .form-group input, .form-group select, .form-group textarea{
-        padding:13px 16px; font-size:0.95rem; border:1px solid var(--line);
-        border-radius:2px; font-family:'Inter',sans-serif; background:var(--white);
-        transition:border-color .2s ease;
+    .hero-content { position: relative; z-index: 1; padding: clamp(32px, 7vw, 100px); max-width: 850px; }
+    .hero-content .eyebrow { color: #e1d4bd; }
+    .hero h1 {
+      margin: 24px 0;
+      font: 400 clamp(48px, 7.5vw, 100px)/.99 var(--serif);
+      letter-spacing: -.045em;
     }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus{
-        outline:none; border-color:var(--gold);
+    .hero h1 em { color: #d9c6a5; font-weight: 400; }
+    .hero-copy { max-width: 440px; color: rgba(255,255,255,.82); font-size: 14px; line-height: 1.9; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 23px;
+      border: 1px solid transparent;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: .2s ease;
     }
-    .form-group textarea{resize:vertical; min-height:110px;}
-    .checkbox-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
-    .checkbox-label{display:flex; align-items:center; gap:9px; font-size:0.88rem; color:var(--ink-soft); font-weight:400; cursor:pointer;}
-    .checkbox-label input{width:16px; height:16px; accent-color:var(--gold);}
-    .btn-submit{width:100%; margin-top:8px; background:var(--ink); color:var(--white); padding:17px;}
-    .btn-submit:hover{background:var(--gold-deep);}
-    .form-note{text-align:center; font-size:0.8rem; color:var(--ink-soft); margin-top:14px; font-style:italic;}
-
-    /* ---------- FOOTER ---------- */
-    footer{background:#141210; color:rgba(255,255,255,0.6); padding:70px 0 30px;}
-    .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:60px; margin-bottom:56px;}
-    .footer-brand img{height:44px; margin-bottom:18px;}
-    .footer-brand p{font-size:0.9rem; line-height:1.7; max-width:320px; font-weight:300;}
-    .footer-col h5{color:var(--white); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:20px; font-weight:600;}
-    .footer-col a{display:block; color:rgba(255,255,255,0.55); text-decoration:none; font-size:0.9rem; margin-bottom:12px; transition:color .2s ease;}
-    .footer-col a:hover{color:var(--gold-pale);}
-    .footer-bottom{
-        border-top:1px solid rgba(255,255,255,0.1); padding-top:26px;
-        display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-        font-size:0.8rem; color:rgba(255,255,255,0.4);
+    .btn-light { background: var(--white); color: var(--ink); }
+    .btn-light:hover { background: #e8dfcf; }
+    .btn-outline { border-color: rgba(255,255,255,.65); color: white; }
+    .btn-outline:hover { background: white; color: var(--ink); }
+    .hero-index {
+      position: absolute;
+      z-index: 2;
+      right: 35px;
+      bottom: 32px;
+      font-size: 10px;
+      letter-spacing: .15em;
+      color: rgba(255,255,255,.8);
     }
 
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width:980px){
-        .wrap, .nav-inner{padding-left:24px; padding-right:24px;}
-        nav.nav-links{position:fixed; top:70px; left:0; right:0; background:var(--cream);
-            flex-direction:column; align-items:flex-start; padding:24px; gap:20px;
-            border-bottom:1px solid var(--line); transform:translateY(-150%); transition:transform .3s ease;}
-        nav.nav-links.open{transform:translateY(0);}
-        .nav-toggle{display:flex;}
-        .service-grid{grid-template-columns:1fr 1fr;}
-        .collection-feature, .collection-feature.reverse{grid-template-columns:1fr; gap:28px;}
-        .collection-feature.reverse img{order:0;}
-        .collection-feature img{height:320px;}
-        .whyus-grid{grid-template-columns:1fr;}
-        .contact-grid{grid-template-columns:1fr; gap:44px;}
-        .work-grid{grid-template-columns:1fr 1fr;}
-        .footer-grid{grid-template-columns:1fr; gap:36px;}
+    /* Intro */
+    .intro { padding: 92px 0 80px; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+    .intro h2 { margin: 0; font: 400 clamp(32px, 4vw, 53px)/1.15 var(--serif); letter-spacing: -.03em; }
+    .intro h2 span { color: var(--olive); font-style: italic; }
+    .intro-copy { padding-top: 8px; max-width: 470px; }
+    .intro-copy p { color: var(--muted); font-size: 13px; line-height: 1.95; margin: 0 0 22px; }
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
-    @media (max-width:640px){
-        section{padding:80px 0;}
-        .service-grid{grid-template-columns:1fr;}
-        .form-row, .checkbox-grid{grid-template-columns:1fr;}
-        .contact-form-card{padding:30px 22px;}
-        .work-grid{grid-template-columns:1fr;}
-        .hero-actions{flex-direction:column; align-items:stretch;}
-        .plywood-panel{grid-template-columns:1fr; padding:36px 24px;}
+    .text-link span { font-size: 18px; transition: transform .2s; }
+    .text-link:hover span { transform: translateX(5px); }
+
+    /* Collections */
+    .collections { background: var(--white); }
+    .collection-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tab {
+      padding: 12px 17px;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
-</style>
+    .tab.active, .tab:hover { background: var(--olive-dark); border-color: var(--olive-dark); color: white; }
+    .collection-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .product-card { min-width: 0; }
+    .product-image-wrap { position: relative; overflow: hidden; background: #e9e5dc; aspect-ratio: 3/4; }
+    .product-image { height: 100%; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+    .product-card:hover .product-image { transform: scale(1.045); }
+    .product-tag {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      background: rgba(255,253,249,.92);
+      padding: 8px 10px;
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .product-info { display: flex; align-items: start; justify-content: space-between; gap: 10px; padding: 15px 0; }
+    .product-info h3 { margin: 0; font-size: 12px; font-weight: 600; }
+    .product-info p { margin: 6px 0 0; color: var(--muted); font-size: 10px; }
+    .product-arrow { font-size: 18px; color: var(--olive); }
+    .collection-footer { margin-top: 35px; display: flex; justify-content: center; }
+
+    /* Feature */
+    .feature { background: #e9e6de; }
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .feature-image { height: 590px; object-fit: cover; }
+    .feature-copy { max-width: 480px; }
+    .feature-copy h2 { font: 400 clamp(36px, 4vw, 57px)/1.1 var(--serif); letter-spacing: -.035em; margin: 18px 0 25px; }
+    .feature-copy p { color: #6f7067; font-size: 13px; line-height: 1.9; }
+    .feature-list { margin: 30px 0; border-top: 1px solid #d1cec5; }
+    .feature-list div { padding: 15px 0; border-bottom: 1px solid #d1cec5; display: flex; justify-content: space-between; gap: 20px; font-size: 11px; }
+    .feature-list span:last-child { color: var(--muted); }
+
+    /* Work */
+    .work-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 16px; align-items: start; }
+    .work-card:nth-child(2) { margin-top: 55px; }
+    .work-card:nth-child(3) { margin-top: 110px; }
+    .work-card img { aspect-ratio: 4/5; background: #e3dfd6; }
+    .work-card h3 { font: 400 23px var(--serif); margin: 16px 0 6px; }
+    .work-card p { margin: 0; color: var(--muted); font-size: 11px; }
+
+    /* Values */
+    .values { background: var(--olive-dark); color: #f8f5ee; }
+    .values .section-head p { color: #c5c5b8; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.2); }
+    .value-card { padding: 32px 30px 20px 0; }
+    .value-card + .value-card { border-left: 1px solid rgba(255,255,255,.2); padding-left: 30px; }
+    .value-number { color: #c7b38f; font: 400 28px var(--serif); }
+    .value-card h3 { font: 400 24px var(--serif); margin: 24px 0 12px; }
+    .value-card p { color: #c5c5b8; font-size: 12px; line-height: 1.9; max-width: 290px; }
+
+    /* Contact */
+    .contact { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; }
+    .contact-copy h2 { font: 400 clamp(38px, 4.5vw, 60px)/1.08 var(--serif); letter-spacing: -.04em; margin: 18px 0; }
+    .contact-copy p { max-width: 380px; color: var(--muted); font-size: 13px; line-height: 1.9; }
+    .contact-detail { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); }
+    .contact-detail span { display: block; color: var(--muted); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; }
+    .contact-detail a { font-size: 13px; }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 18px; }
+    .field { display: flex; flex-direction: column; gap: 9px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #5e6057; }
+    .field input, .field textarea, .field select {
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid #cfcfc5;
+      border-radius: 0;
+      padding: 12px 0;
+      outline: none;
+      background: transparent;
+      color: var(--ink);
+      font-size: 13px;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--olive); }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .form-note { grid-column: 1 / -1; color: var(--muted); font-size: 10px; line-height: 1.7; }
+    .contact-form .btn { justify-self: start; background: var(--olive-dark); color: white; border: 0; }
+    .contact-form .btn:hover { background: var(--olive); }
+
+    /* Footer */
+    footer { background: #24271f; color: #f5f2ec; padding: 55px 0 25px; }
+    .footer-top { display: flex; justify-content: space-between; gap: 35px; padding-bottom: 45px; }
+    .footer-brand { font-size: 13px; letter-spacing: .16em; font-weight: 700; }
+    .footer-brand p { color: #aeb0a4; font-size: 11px; letter-spacing: 0; font-weight: 400; line-height: 1.8; max-width: 280px; }
+    .footer-links { display: flex; gap: 50px; }
+    .footer-links h4 { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: #b9aa8c; margin: 0 0 17px; }
+    .footer-links a { display: block; color: #c6c7bd; font-size: 11px; margin: 12px 0; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom { border-top: 1px solid #45483e; padding-top: 20px; display: flex; justify-content: space-between; gap: 20px; color: #aeb0a4; font-size: 9px; letter-spacing: .04em; }
+
+    @media (max-width: 900px) {
+      .container { width: min(100% - 40px, var(--max)); }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 10px; }
+      .brand { min-width: auto; }
+      .collection-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-grid, .contact-grid { gap: 40px; }
+      .feature-image { height: 480px; }
+      .work-grid { grid-template-columns: 1fr 1fr; }
+      .work-card:nth-child(3) { display: none; }
+    }
+    @media (max-width: 640px) {
+      .container { width: calc(100% - 36px); }
+      .section { padding: 75px 0; }
+      .nav { height: 70px; }
+      .brand img { width: 36px; height: 36px; }
+      .brand-name { font-size: 11px; }
+      .brand-sub { font-size: 7px; }
+      .menu-toggle { display: block; }
+      .nav-cta { display: none; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 22px 24px 26px;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+      .hero { padding-top: 12px; }
+      .hero-panel { min-height: 680px; min-height: 78svh; }
+      .hero-content { padding: 28px 24px 55px; }
+      .hero h1 { font-size: clamp(48px, 14vw, 74px); }
+      .hero-copy { font-size: 12px; }
+      .hero-index { right: 20px; bottom: 20px; }
+      .intro { padding: 65px 0; }
+      .intro-grid, .feature-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .section-head { display: block; margin-bottom: 28px; }
+      .section-head p { margin-top: 16px; }
+      .collection-tabs { margin-top: 22px; }
+      .tab { padding: 10px 12px; font-size: 9px; }
+      .collection-grid { gap: 10px; }
+      .product-info h3 { font-size: 11px; }
+      .product-info p { font-size: 9px; }
+      .product-tag { left: 7px; top: 7px; padding: 6px 7px; font-size: 8px; }
+      .feature-image { height: 390px; }
+      .feature-copy h2 { font-size: 42px; }
+      .work-grid { gap: 12px; }
+      .work-card:nth-child(2) { margin-top: 35px; }
+      .work-card h3 { font-size: 19px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .value-card, .value-card + .value-card { border-left: 0; border-bottom: 1px solid rgba(255,255,255,.2); padding: 25px 0; }
+      .value-card h3 { margin: 12px 0; }
+      .contact-form { grid-template-columns: 1fr; }
+      .field.full, .form-note { grid-column: auto; }
+      .footer-top { flex-direction: column; }
+      .footer-links { gap: 35px; }
+      .footer-bottom { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
 </head>
+
 <body>
-
-<header class="site-nav" id="siteNav">
-    <div class="nav-inner">
-        <div class="nav-logo">
-            <img src="images/brand/logo.png" alt="Cult & Habitat">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Cult and Habitat home">
+        <img src="Logo.png" alt="Cult & Habitat logo" onerror="this.style.display='none'">
+        <div>
+          <div class="brand-name">CULT & HABITAT</div>
+          <div class="brand-sub">SPACES FOR A BETTER YOU</div>
         </div>
-        <nav class="nav-links" id="navLinks">
-            <a href="#collections">Collections</a>
-            <a href="#services">Services</a>
-            <a href="#work">Our Work</a>
-            <a href="#why">Why Us</a>
-            <a href="#contact" class="nav-cta">Get in Touch</a>
-        </nav>
-        <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-</header>
+      </a>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-        <div class="hero-inner">
-            <img class="hero-logo" src="images/brand/logo.png" alt="Cult & Habitat">
-            <span class="hero-eyebrow">Surfaces · Doors · Laminates · Execution</span>
-            <h1>Spaces built with <em>intention</em>, finished with craft</h1>
-            <p>From the first material sample to the final fitting, we supply and install premium laminates, acrylics, doors and engineered wood — so your project looks as good finished as it did on paper.</p>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">Our Philosophy</a>
+        <a href="#work">Our Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="nav-cta" href="#contact">Start a conversation ↗</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-panel">
+          <img class="hero-image" src="images/hero/hero-main.jpg" alt="Thoughtfully designed interior with refined materials" fetchpriority="high">
+          <div class="hero-content">
+            <div class="eyebrow">Materials · Craft · Living</div>
+            <h1>Surfaces that<br>make a space<br>feel <em>like yours.</em></h1>
+            <p class="hero-copy">A considered collection of surfaces and materials, chosen to bring character, warmth, and quiet distinction to the spaces you live in.</p>
             <div class="hero-actions">
-                <a href="#collections" class="btn btn-gold">Browse the Catalogue</a>
-                <a href="#contact" class="btn btn-outline">Request a Consultation</a>
+              <a class="btn btn-light" href="#collections">Explore collections</a>
+              <a class="btn btn-outline" href="#about">Discover our approach</a>
             </div>
+          </div>
+          <div class="hero-index">01 — MATERIALS WITH MEANING</div>
         </div>
-    </div>
-    <div class="hero-scroll">Scroll<div class="line"></div></div>
-</section>
+      </div>
+    </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-    <div class="wrap">
+    <section class="intro" id="about">
+      <div class="container intro-grid">
+        <div>
+          <div class="eyebrow muted">A thoughtful point of view</div>
+          <h2>Good design begins with the things we <span>touch.</span></h2>
+        </div>
+        <div class="intro-copy">
+          <p>At CULT & HABITAT, we believe materials do more than finish a room. They shape its atmosphere, influence how it feels, and become part of everyday life.</p>
+          <p>Our collections bring together expressive finishes and versatile surfaces for designers, architects, and homeowners creating spaces with intention.</p>
+          <a class="text-link" href="#collections">Explore the collection <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section collections" id="collections">
+      <div class="container">
         <div class="section-head">
-            <span class="eyebrow">What We Do</span>
-            <h2>Full-service, from selection to site</h2>
-            <p>We're not just a catalogue — we manage the whole material journey for your project, end to end.</p>
-        </div>
-        <div class="service-grid">
-            <div class="service-card">
-                <span class="service-num">01</span>
-                <h3>Design Consultation</h3>
-                <p>We walk through your space and brief with you, then shortlist finishes that actually suit the light, layout and budget.</p>
+          <div>
+            <div class="eyebrow muted">Explore the materials</div>
+            <h2>Made to be lived with.</h2>
+          </div>
+          <div>
+            <p>Discover finishes with distinct textures, tones, and character. Find the material that feels right for your space.</p>
+            <div class="collection-tabs" role="group" aria-label="Filter collections">
+              <button class="tab active" data-filter="all">All materials</button>
+              <button class="tab" data-filter="doorskin">Doorskin</button>
+              <button class="tab" data-filter="acrylic">Acrylic</button>
+              <button class="tab" data-filter="satvario">Satvario</button>
+              <button class="tab" data-filter="marble">Marble</button>
             </div>
-            <div class="service-card">
-                <span class="service-num">02</span>
-                <h3>Material Sourcing</h3>
-                <p>Direct access to premium laminate, acrylic, door and plywood ranges — sampled and compared before you commit.</p>
-            </div>
-            <div class="service-card">
-                <span class="service-num">03</span>
-                <h3>Site Execution</h3>
-                <p>Measured, fabricated and installed by our team — one point of contact from order to fitting.</p>
-            </div>
-            <div class="service-card">
-                <span class="service-num">04</span>
-                <h3>Project Management</h3>
-                <p>Timelines, coordination with other trades, and quality checks handled, so you're not chasing anyone.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- COLLECTIONS -->
-<section class="collections" id="collections">
-    <div class="wrap">
-        <div class="section-head center">
-            <span class="eyebrow">The Catalogue</span>
-            <h2>Collections worth building around</h2>
-            <p>A curated view of our range — real finishes, real textures. Full swatch books and additional designs available on request.</p>
+          </div>
         </div>
 
-        <div class="tab-bar" id="tabBar">
-            <button class="tab-btn active" data-tab="doorskin">Door Skin</button>
-            <button class="tab-btn" data-tab="acrylic">Synergy Acrylics</button>
-            <button class="tab-btn" data-tab="satvario">Satvario Laminates</button>
-            <button class="tab-btn" data-tab="marble">Marble &amp; Rustic</button>
-            <button class="tab-btn" data-tab="plywood">Engineered Wood</button>
+        <div class="collection-grid" id="collectionGrid">
+          <a class="product-card" data-category="doorskin" href="#contact">
+            <div class="product-image-wrap">
+              <img class="product-image" src="images/hero/doorskin_feat.jpg" alt="Doorskin surface collection" loading="lazy">
+              <span class="product-tag">01 / Doorskin</span>
+            </div>
+            <div class="product-info"><div><h3>Doorskin</h3><p>Texture for every threshold</p></div><span class="product-arrow">↗</span></div>
+          </a>
+          <a class="product-card" data-category="acrylic" href="#contact">
+            <div class="product-image-wrap">
+              <img class="product-image" src="images/hero/acrylic_feat.jpg" alt="Acrylic finish collection" loading="lazy">
+              <span class="product-tag">02 / Acrylic</span>
+            </div>
+            <div class="product-info"><div><h3>Acrylic</h3><p>Clarity and refined colour</p></div><span class="product-arrow">↗</span></div>
+          </a>
+          <a class="product-card" data-category="satvario" href="#contact">
+            <div class="product-image-wrap">
+              <img class="product-image" src="images/hero/satvario_feat.jpg" alt="Satvario surface collection" loading="lazy">
+              <span class="product-tag">03 / Satvario</span>
+            </div>
+            <div class="product-info"><div><h3>Satvario</h3><p>Subtle pattern, lasting presence</p></div><span class="product-arrow">↗</span></div>
+          </a>
+          <a class="product-card" data-category="marble" href="#contact">
+            <div class="product-image-wrap">
+              <img class="product-image" src="images/hero/marble_feat.jpg" alt="Marble pattern collection" loading="lazy">
+              <span class="product-tag">04 / Marble</span>
+            </div>
+            <div class="product-info"><div><h3>Marble</h3><p>Natural inspiration, timeless appeal</p></div><span class="product-arrow">↗</span></div>
+          </a>
         </div>
 
-        <!-- DOOR SKIN -->
-        <div class="tab-panel active" id="panel-doorskin">
-            <div class="collection-feature">
-                <img src="images/hero/doorskin_feat.jpg" alt="Door Skin featured design">
-                <div class="collection-feature-text">
-                    <span class="eyebrow">Door Skin</span>
-                    <h3>Character at the front door</h3>
-                    <p>Digital, textured and premium finishes engineered onto durable door skins — the detail that sets a home apart before anyone steps inside.</p>
-                    <div class="feature-stats">
-                        <div><b>40+</b><span>Designs</span></div>
-                        <div><b>7×3.25ft</b><span>Standard size</span></div>
-                        <div><b>Custom</b><span>Sizing available</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="photo-grid">
-                <figure class="photo-card">
-                <img src="images/doorskin/doorskin_5.jpg" alt="Door Skin — Design 02" loading="lazy">
-                <figcaption>Door Skin — Design 02</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_8.jpg" alt="Door Skin — Design 03" loading="lazy">
-                <figcaption>Door Skin — Design 03</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_10.jpg" alt="Door Skin — Design 04" loading="lazy">
-                <figcaption>Door Skin — Design 04</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_13.jpg" alt="Door Skin — Design 05" loading="lazy">
-                <figcaption>Door Skin — Design 05</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_16.jpg" alt="Door Skin — Design 06" loading="lazy">
-                <figcaption>Door Skin — Design 06</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_18.jpg" alt="Door Skin — Design 07" loading="lazy">
-                <figcaption>Door Skin — Design 07</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_21.jpg" alt="Door Skin — Design 08" loading="lazy">
-                <figcaption>Door Skin — Design 08</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_24.jpg" alt="Door Skin — Design 09" loading="lazy">
-                <figcaption>Door Skin — Design 09</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_26.jpg" alt="Door Skin — Design 10" loading="lazy">
-                <figcaption>Door Skin — Design 10</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_29.jpg" alt="Door Skin — Design 11" loading="lazy">
-                <figcaption>Door Skin — Design 11</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_31.jpg" alt="Door Skin — Design 12" loading="lazy">
-                <figcaption>Door Skin — Design 12</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_34.jpg" alt="Door Skin — Design 13" loading="lazy">
-                <figcaption>Door Skin — Design 13</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_37.jpg" alt="Door Skin — Design 14" loading="lazy">
-                <figcaption>Door Skin — Design 14</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_39.jpg" alt="Door Skin — Design 15" loading="lazy">
-                <figcaption>Door Skin — Design 15</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/doorskin/doorskin_42.jpg" alt="Door Skin — Design 16" loading="lazy">
-                <figcaption>Door Skin — Design 16</figcaption>
-            </figure>
-            </div>
-            <p class="tab-footnote">40+ additional Door Skin designs available — ask for the full range</p>
+        <div class="collection-footer">
+          <a class="btn" style="background:var(--olive-dark);color:white" href="#contact">Ask about our materials ↗</a>
         </div>
+      </div>
+    </section>
 
-        <!-- ACRYLIC -->
-        <div class="tab-panel" id="panel-acrylic">
-            <div class="collection-feature reverse">
-                <img src="images/hero/acrylic_feat.jpg" alt="Synergy acrylic featured design">
-                <div class="collection-feature-text">
-                    <span class="eyebrow">Synergy</span>
-                    <h3>High-shine acrylic surfaces</h3>
-                    <p>UV mirror finishes, marble-effect panels and anti-scratch (6H) acrylic sheets built for kitchens, wardrobes and feature walls that need to hold their shine.</p>
-                    <div class="feature-stats">
-                        <div><b>6H</b><span>Anti-scratch rating</span></div>
-                        <div><b>20+</b><span>Finishes</span></div>
-                        <div><b>200×200</b><span>Sheet sizes (mm)</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="photo-grid">
-                <figure class="photo-card">
-                <img src="images/acrylic/acrylic_48.jpg" alt="Uv Mirror" loading="lazy">
-                <figcaption>Uv Mirror <span class='code'>KAL8902</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/acrylic/acrylic_50.jpg" alt="Fluted Solid" loading="lazy">
-                <figcaption>Fluted Solid <span class='code'>KAL8804</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/acrylic/acrylic_51.jpg" alt="RICHPalettes" loading="lazy">
-                <figcaption>RICHPalettes <span class='code'>KAL8802</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/acrylic/acrylic_53.jpg" alt="Marble" loading="lazy">
-                <figcaption>Marble <span class='code'>KAL8701</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/acrylic/acrylic_54.jpg" alt="Marble" loading="lazy">
-                <figcaption>Marble <span class='code'>KAL8704</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/acrylic/acrylic_56.jpg" alt="Sparkle" loading="lazy">
-                <figcaption>Sparkle <span class='code'>KAL8302</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/acrylic/acrylic_58.jpg" alt="Sparkle" loading="lazy">
-                <figcaption>Sparkle <span class='code'>KAL8308</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/acrylic/acrylic_59.jpg" alt="Mettalic" loading="lazy">
-                <figcaption>Mettalic <span class='code'>KAL8401</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/acrylic/acrylic_61.jpg" alt="Matt" loading="lazy">
-                <figcaption>Matt <span class='code'>KAL8501</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/acrylic/acrylic_62.jpg" alt="Solid Gloss" loading="lazy">
-                <figcaption>Solid Gloss <span class='code'>KAL8101</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/acrylic/acrylic_64.jpg" alt="Solid Gloss" loading="lazy">
-                <figcaption>Solid Gloss <span class='code'>KAL8116</span></figcaption>
-            </figure>
-            </div>
-            <p class="tab-footnote">20+ additional acrylic finishes available — ask for the full range</p>
+    <section class="section feature">
+      <div class="container feature-grid">
+        <img class="feature-image" src="images/doorskin/doorskin_5.jpg" alt="Close-up of a doorskin finish" loading="lazy">
+        <div class="feature-copy">
+          <div class="eyebrow muted">The details make the difference</div>
+          <h2>Designed for the everyday. Chosen for the feeling.</h2>
+          <p>A surface is part of the experience of a room: the way light moves across it, the texture beneath your hand, and the harmony it creates with everything around it.</p>
+          <div class="feature-list">
+            <div><span>Doorskin</span><span>Expressive finishes</span></div>
+            <div><span>Acrylic</span><span>Clean, contemporary surfaces</span></div>
+            <div><span>Satvario</span><span>Distinctive visual character</span></div>
+            <div><span>Marble</span><span>Classic material inspiration</span></div>
+          </div>
+          <a class="text-link" href="#contact">Find your finish <span>→</span></a>
         </div>
+      </div>
+    </section>
 
-        <!-- SATVARIO -->
-        <div class="tab-panel" id="panel-satvario">
-            <div class="collection-feature">
-                <img src="images/hero/satvario_feat.jpg" alt="Satvario featured design">
-                <div class="collection-feature-text">
-                    <span class="eyebrow">Satvario</span>
-                    <h3>The 1mm luxury laminate range</h3>
-                    <p>Our largest and most versatile collection — synchronised textures, polished veneers, marble replicas and solid colours, all in a durable 1mm laminate.</p>
-                    <div class="feature-stats">
-                        <div><b>65+</b><span>Designs</span></div>
-                        <div><b>1mm</b><span>Premium thickness</span></div>
-                        <div><b>8×4ft</b><span>Full sheet view</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="photo-grid">
-                <figure class="photo-card">
-                <img src="images/satvario/satvario_76.jpg" alt="Synchronised Textured Veneer" loading="lazy">
-                <figcaption>Synchronised Textured Veneer</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_79.jpg" alt="Polished Veneer Series" loading="lazy">
-                <figcaption>Polished Veneer Series</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_83.jpg" alt="Zeromatt Veneer" loading="lazy">
-                <figcaption>Zeromatt Veneer</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_86.jpg" alt="Chiffon" loading="lazy">
-                <figcaption>Chiffon</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_90.jpg" alt="Fiber Wood" loading="lazy">
-                <figcaption>Fiber Wood <span class='code'>ALPHA</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_93.jpg" alt="Lauren Oak" loading="lazy">
-                <figcaption>Lauren Oak</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_97.jpg" alt="Gloss" loading="lazy">
-                <figcaption>Gloss</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_101.jpg" alt="Satvario Gloss" loading="lazy">
-                <figcaption>Satvario Gloss</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_104.jpg" alt="Satvario Gloss" loading="lazy">
-                <figcaption>Satvario Gloss</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_108.jpg" alt="135W X 90H Mm" loading="lazy">
-                <figcaption>135W X 90H Mm</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_111.jpg" alt="Twinkle Lustrous" loading="lazy">
-                <figcaption>Twinkle Lustrous</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_115.jpg" alt="Pastel Colors ( Silky Matt )" loading="lazy">
-                <figcaption>Pastel Colors ( Silky Matt )</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_118.jpg" alt="Feather Touch" loading="lazy">
-                <figcaption>Feather Touch <span class='code'>ALPHA</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_122.jpg" alt="Natura L Pride" loading="lazy">
-                <figcaption>Natura L Pride <span class='code'>NO111</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_125.jpg" alt="Olivera" loading="lazy">
-                <figcaption>Olivera</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/satvario/satvario_129.jpg" alt="Suede Finish" loading="lazy">
-                <figcaption>Suede Finish <span class='code'>NO125</span></figcaption>
-            </figure>
-            </div>
-            <p class="tab-footnote">65+ Satvario designs across texture, veneer, marble and gloss — ask for the full range</p>
-        </div>
-
-        <!-- MARBLE -->
-        <div class="tab-panel" id="panel-marble">
-            <div class="collection-feature reverse">
-                <img src="images/hero/marble_feat.jpg" alt="Marble series featured design">
-                <div class="collection-feature-text">
-                    <span class="eyebrow">Marble &amp; Rustic Series</span>
-                    <h3>Raw texture, refined finish</h3>
-                    <p>Where natural stone character meets laminate practicality — earthy rustic tones and dramatic marble veining for warm, timeless interiors.</p>
-                    <div class="feature-stats">
-                        <div><b>35+</b><span>Patterns</span></div>
-                        <div><b>Matt</b><span>&amp; gloss options</span></div>
-                        <div><b>New</b><span>Seasonal drops</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="photo-grid">
-                <figure class="photo-card">
-                <img src="images/marble/marble_147.jpg" alt="Rustic Design" loading="lazy">
-                <figcaption>Rustic Design</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/marble/marble_150.jpg" alt="Rustic Design" loading="lazy">
-                <figcaption>Rustic Design</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/marble/marble_153.jpg" alt="Divine Cedar" loading="lazy">
-                <figcaption>Divine Cedar</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/marble/marble_156.jpg" alt="Chiffon" loading="lazy">
-                <figcaption>Chiffon</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/marble/marble_159.jpg" alt="Polyester Finish" loading="lazy">
-                <figcaption>Polyester Finish</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/marble/marble_162.jpg" alt="Criss Cross" loading="lazy">
-                <figcaption>Criss Cross</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/marble/marble_165.jpg" alt="Flute Matt" loading="lazy">
-                <figcaption>Flute Matt <span class='code'>FM</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/marble/marble_168.jpg" alt="Reverse Flute" loading="lazy">
-                <figcaption>Reverse Flute <span class='code'>RVF</span></figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/marble/marble_171.jpg" alt="Wonder" loading="lazy">
-                <figcaption>Wonder</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/marble/marble_174.jpg" alt="Feather Touch" loading="lazy">
-                <figcaption>Feather Touch</figcaption>
-            </figure>
-            <figure class="photo-card">
-                <img src="images/marble/marble_177.jpg" alt="Feather Touch" loading="lazy">
-                <figcaption>Feather Touch</figcaption>
-            </figure>
-            </div>
-            <p class="tab-footnote">35+ additional marble &amp; rustic patterns available — ask for the full range</p>
-        </div>
-
-        <!-- PLYWOOD -->
-        <div class="tab-panel" id="panel-plywood">
-            <div class="plywood-panel">
-                <div>
-                    <span class="eyebrow" style="color:var(--gold-pale)">Engineered Wood</span>
-                    <h3>Built stronger, from the core out</h3>
-                    <p>4x pressed, 8×4ft assembled core, zero-gap construction — the structural backbone for cabinetry, doors and furniture that needs to last.</p>
-                </div>
-                <div class="tag-list">
-                    <div class="tag-pill">Calibrated Plywood</div>
-                    <div class="tag-pill">Fire Retardant Ply</div>
-                    <div class="tag-pill">Marine Grade</div>
-                    <div class="tag-pill">BWR Grade</div>
-                    <div class="tag-pill">Flush Doors</div>
-                    <div class="tag-pill">Prelaminate Doors</div>
-                    <div class="tag-pill">Block Board</div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- OUR WORK -->
-<section class="work" id="work">
-    <div class="wrap">
+    <section class="section" id="work">
+      <div class="container">
         <div class="section-head">
-            <span class="eyebrow">Our Work</span>
-            <h2>Recent projects</h2>
-            <p>Client installations and completed spaces — gallery updating soon.</p>
+          <div>
+            <div class="eyebrow muted">Material in context</div>
+            <h2>Ideas for your space.</h2>
+          </div>
+          <p>Explore ways finishes can help set the tone—from calm and understated to bold and expressive.</p>
         </div>
         <div class="work-grid">
-            <div class="work-placeholder">
-                <div class="icon">+</div>
-                <div class="label">Project photos coming soon</div>
-                <div class="sub">Completed installations will be added here shortly</div>
-            </div>
-            <div class="work-placeholder">
-                <div class="icon">+</div>
-                <div class="label">Project photos coming soon</div>
-                <div class="sub">Completed installations will be added here shortly</div>
-            </div>
-            <div class="work-placeholder">
-                <div class="icon">+</div>
-                <div class="label">Project photos coming soon</div>
-                <div class="sub">Completed installations will be added here shortly</div>
-            </div>
+          <article class="work-card">
+            <img src="images/acrylic/acrylic_48.jpg" alt="Acrylic finish inspiration" loading="lazy">
+            <h3>Quiet sophistication</h3>
+            <p>Clean lines. Considered finishes.</p>
+          </article>
+          <article class="work-card">
+            <img src="images/satvario/satvario_76.jpg" alt="Satvario finish inspiration" loading="lazy">
+            <h3>Texture & tone</h3>
+            <p>Materials that add depth.</p>
+          </article>
+          <article class="work-card">
+            <img src="images/marble/marble_147.jpg" alt="Marble finish inspiration" loading="lazy">
+            <h3>Timeless character</h3>
+            <p>Patterns inspired by nature.</p>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section values">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" style="color:#c7b38f">The CULT & HABITAT approach</div>
+            <h2>Thoughtful by design.</h2>
+          </div>
+          <p>We bring a considered perspective to the materials that shape the spaces around us.</p>
+        </div>
+        <div class="values-grid">
+          <article class="value-card">
+            <div class="value-number">01</div>
+            <h3>Considered selection</h3>
+            <p>A collection of finishes and patterns to help you explore the right mood and material for your project.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-number">02</div>
+            <h3>Design-led thinking</h3>
+            <p>We look beyond the surface, considering how materials work with light, form, colour, and the wider space.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-number">03</div>
+            <h3>Personal guidance</h3>
+            <p>Tell us about your project and the look you have in mind. We’ll help you explore suitable options from our collections.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <div class="eyebrow muted">Let’s talk materials</div>
+          <h2>Have a space<br>in mind?</h2>
+          <p>Share a little about your project, the materials you’re exploring, or the finish you’re looking for. We’d be happy to hear from you.</p>
+          <div class="contact-detail">
+            <span>Email</span>
+            <a href="mailto:brucewayne180710@gmail.com">brucewayne180710@gmail.com</a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" autocomplete="name" placeholder="Name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number">
+          </div>
+          <div class="field">
+            <label for="interest">Interested in</label>
+            <select id="interest" name="interest">
+              <option value="General enquiry">Choose a collection</option>
+              <option>Doorskin</option>
+              <option>Acrylic</option>
+              <option>Satvario</option>
+              <option>Marble</option>
+              <option>Multiple collections</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="message">Tell us about your project</label>
+            <textarea id="message" name="message" placeholder="A little about your space, project, or what you’re looking for..." required></textarea>
+          </div>
+          <p class="form-note">Submitting opens your email application with your enquiry prepared. You can review it before sending.</p>
+          <button class="btn" type="submit">Prepare enquiry <span style="margin-left:14px">↗</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          CULT & HABITAT
+          <p>Spaces for a Better You.<br>Thoughtful materials for considered spaces.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Explore</h4>
+            <a href="#collections">Collections</a>
+            <a href="#about">Our philosophy</a>
+            <a href="#work">Our work</a>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <a href="#contact">Enquiries</a>
+            <a href="mailto:brucewayne180710@gmail.com">Email us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> CULT & HABITAT. All rights reserved.</span>
+        <span>Materials with meaning.</span>
+      </div>
     </div>
-</section>
+  </footer>
 
-<!-- WHY US -->
-<section class="whyus" id="why">
-    <div class="wrap">
-        <div class="whyus-grid">
-            <div class="whyus-img">
-                <img src="images/doorskin/doorskin_5.jpg" alt="Door skin detail">
-            </div>
-            <div>
-                <span class="eyebrow">Why Cult &amp; Habitat</span>
-                <h2>A single point of contact, start to finish</h2>
-                <div class="whyus-list">
-                    <div class="whyus-item">
-                        <div class="mark">1</div>
-                        <div><h4>One supplier, one installer</h4><p>No handoffs between a materials vendor and a separate contractor — we do both, so nothing gets lost in translation.</p></div>
-                    </div>
-                    <div class="whyus-item">
-                        <div class="mark">2</div>
-                        <div><h4>Real samples before you decide</h4><p>See and feel the actual finish against your space before it's ordered — not just a printed swatch.</p></div>
-                    </div>
-                    <div class="whyus-item">
-                        <div class="mark">3</div>
-                        <div><h4>Built for Indian sites &amp; climate</h4><p>Materials selected for durability — scratch, moisture and wear resistance suited to everyday use.</p></div>
-                    </div>
-                    <div class="whyus-item">
-                        <div class="mark">4</div>
-                        <div><h4>Clear costs, no surprises</h4><p>You'll know material and installation costs upfront before work begins on site.</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <div class="wrap">
-        <div class="contact-grid">
-            <div class="contact-info">
-                <span class="eyebrow">Get In Touch</span>
-                <h2>Let's talk about your space</h2>
-                <p>Tell us what you're working on — a single room or a full fit-out — and we'll help you land on the right materials and a realistic plan to install them.</p>
-
-                <div class="contact-line">
-                    <div class="ico">@</div>
-                    <div>
-                        <span class="label">Email</span>
-                        <a href="mailto:brucewayne180710@gmail.com">brucewayne180710@gmail.com</a>
-                    </div>
-                </div>
-                <div class="contact-line">
-                    <div class="ico">&#9679;</div>
-                    <div>
-                        <span class="label">Response Time</span>
-                        <span>Within 24 hours, every enquiry</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-form-card">
-                <form onsubmit="handleFormSubmit(event)">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="role">I am a...</label>
-                            <select id="role" name="role" required>
-                                <option value="">Select one</option>
-                                <option value="architect">Architect</option>
-                                <option value="designer">Interior Designer</option>
-                                <option value="contractor">Contractor / Builder</option>
-                                <option value="homeowner">Homeowner</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group full">
-                        <label for="project">Tell us about your project</label>
-                        <textarea id="project" name="project" rows="4" placeholder="What are you building? What finishes interest you?" required></textarea>
-                    </div>
-                    <div class="form-group full">
-                        <label>Which collections interest you?</label>
-                        <div class="checkbox-grid">
-                            <label class="checkbox-label"><input type="checkbox" name="collections" value="satvario"> Satvario Laminates</label>
-                            <label class="checkbox-label"><input type="checkbox" name="collections" value="synergy"> Synergy Acrylics</label>
-                            <label class="checkbox-label"><input type="checkbox" name="collections" value="doorskin"> Door Skin</label>
-                            <label class="checkbox-label"><input type="checkbox" name="collections" value="marble"> Marble &amp; Rustic</label>
-                            <label class="checkbox-label"><input type="checkbox" name="collections" value="plywood"> Engineered Wood</label>
-                            <label class="checkbox-label"><input type="checkbox" name="collections" value="undecided"> Not sure yet</label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-submit">Request Consultation</button>
-                    <p class="form-note">Opens your email client, addressed to brucewayne180710@gmail.com</p>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="wrap">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="images/brand/logo.png" alt="Cult & Habitat">
-                <p>Premium interior surfaces and full-service execution — laminates, acrylics, doors and engineered wood, sourced and installed.</p>
-            </div>
-            <div class="footer-col">
-                <h5>Collections</h5>
-                <a href="#collections">Door Skin</a>
-                <a href="#collections">Synergy Acrylics</a>
-                <a href="#collections">Satvario Laminates</a>
-                <a href="#collections">Marble &amp; Rustic</a>
-            </div>
-            <div class="footer-col">
-                <h5>Studio</h5>
-                <a href="#services">Services</a>
-                <a href="#work">Our Work</a>
-                <a href="#why">Why Us</a>
-                <a href="mailto:brucewayne180710@gmail.com">Contact</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; <span id="yr"></span> Cult &amp; Habitat. Spaces for a Better You.</span>
-            <span>brucewayne180710@gmail.com</span>
-        </div>
-    </div>
-</footer>
-
-<script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // sticky nav shadow
-    const nav = document.getElementById('siteNav');
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 20);
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+      menuToggle.textContent = isOpen ? "×" : "☰";
     });
 
-    // mobile nav toggle
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.textContent = "☰";
+      });
+    });
 
-    // tabs
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            tabBtns.forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-            btn.classList.add('active');
-            document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    // Collection category filter
+    const tabs = document.querySelectorAll(".tab");
+    const cards = document.querySelectorAll(".product-card");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(item => item.classList.remove("active"));
+        tab.classList.add("active");
+
+        const filter = tab.dataset.filter;
+        cards.forEach(card => {
+          card.hidden = filter !== "all" && card.dataset.category !== filter;
         });
+      });
     });
 
-    function handleFormSubmit(event) {
-        event.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const role = document.getElementById('role').value;
-        const project = document.getElementById('project').value;
-        const collections = Array.from(document.querySelectorAll('input[name="collections"]:checked')).map(cb => cb.value).join(', ');
+    // Prepare an email draft. This does not transmit form data automatically.
+    document.getElementById("contactForm").addEventListener("submit", event => {
+      event.preventDefault();
 
-        const body = `New Design Consultation Request\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nRole: ${role}\n\nProject Details:\n${project}\n\nInterested Collections: ${collections || 'Not specified'}\n\n---\nSubmitted from the Cult & Habitat website.`;
-        window.location.href = `mailto:brucewayne180710@gmail.com?subject=Design Consultation Request from ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
-        alert("Thanks! Opening your email client to send the request. If it doesn't open, email us directly at brucewayne180710@gmail.com");
-    }
-</script>
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const subject = `CULT & HABITAT enquiry — ${data.get("interest")}`;
+      const body = [
+        `Name: ${data.get("name")}`,
+        `Email: ${data.get("email")}`,
+        `Phone: ${data.get("phone") || "Not provided"}`,
+        `Interested in: ${data.get("interest")}`,
+        "",
+        "Project details:",
+        data.get("message")
+      ].join("\n");
+
+      const mailto = "mailto:brucewayne180710@gmail.com"
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailto;
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
