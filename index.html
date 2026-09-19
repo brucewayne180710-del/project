@@ -1,691 +1,1026 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f5f2ec" />
-  <meta name="description" content="CULT & HABITAT — considered surfaces and materials for thoughtfully designed spaces." />
-  <title>CULT & HABITAT — Spaces for a Better You</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CULT & HABITAT — premium laminates, acrylics, doors and engineered wood, sourced and installed.">
+<title>CULT & HABITAT — Spaces for a Better You</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- ================= PostHog (product analytics) =================
+     Replace YOUR_POSTHOG_PROJECT_KEY below with your real project API key
+     (Project Settings → Project API Key in your PostHog instance).
+     If your PostHog region is EU, change api_host to https://eu.i.posthog.com
+     ================================================================= -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('YOUR_POSTHOG_PROJECT_KEY', { api_host: 'https://us.i.posthog.com', defaults: '2026-01-30' })
+</script>
 
-  <style>
-    :root {
-      --paper: #f5f2ec;
-      --white: #fffdf9;
-      --ink: #252820;
-      --muted: #77776e;
-      --olive: #62664d;
-      --olive-dark: #414633;
-      --line: #dedbd2;
-      --accent: #b49a70;
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "DM Sans", Arial, sans-serif;
-      --max: 1280px;
+<style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+        --ink:#211d19; --ink-soft:#5c554c;
+        --paper:#f7f3ec; --stone:#ece3d2;
+        --line:#e0d6c2;
+        --brass:#b1793a; --brass-deep:#8a5c26; --brass-pale:#e8cd9f;
+        --rust:#a5502f;
+        --white:#fffdfa;
     }
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3,h4,.serif{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;}
+    a{color:inherit;} img{max-width:100%;display:block;}
+    .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:600;color:var(--brass-deep);margin-bottom:14px;display:block;}
+    .wrap{max-width:1300px;margin:0 auto;padding:0 40px;}
+    section{padding:110px 0;}
+    .section-head{max-width:640px;margin-bottom:56px;}
+    .section-head.center{margin:0 auto 56px;text-align:center;}
+    .section-head h2{font-size:clamp(2rem,3.4vw,2.7rem);line-height:1.15;margin-bottom:16px;}
+    .section-head p{color:var(--ink-soft);font-size:1.02rem;line-height:1.7;font-weight:300;}
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
-    img { display: block; width: 100%; object-fit: cover; }
-    a { color: inherit; text-decoration: none; }
-    button, input, textarea, select { font: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    button { cursor: pointer; }
-    .container { width: min(var(--max), calc(100% - 64px)); margin-inline: auto; }
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      font-size: 10px;
-      font-weight: 700;
-    }
-    .serif { font-family: var(--serif); font-weight: 400; }
-    .muted { color: var(--muted); }
-    .section { padding: 110px 0; }
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 42px;
-    }
-    .section-head h2 {
-      margin: 12px 0 0;
-      font: 400 clamp(34px, 4vw, 54px)/1.12 var(--serif);
-      letter-spacing: -.035em;
-    }
-    .section-head p { max-width: 360px; color: var(--muted); line-height: 1.8; font-size: 13px; }
+    /* NAV */
+    header.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(247,243,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:.3s;}
+    header.nav.scrolled{border-color:var(--line);box-shadow:0 4px 24px rgba(0,0,0,.04);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;max-width:1300px;margin:0 auto;}
+    .nav-logo{display:flex;align-items:center;gap:10px;}
+    .nav-logo img{height:40px;width:auto;}
+    .nav-links{display:flex;gap:32px;align-items:center;}
+    .nav-links a{font-size:.87rem;font-weight:500;text-decoration:none;color:var(--ink-soft);position:relative;padding-bottom:4px;transition:color .2s;}
+    .nav-links a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--brass);transform:scaleX(0);transition:transform .25s;transform-origin:left;}
+    .nav-links a:hover{color:var(--ink);} .nav-links a:hover::after{transform:scaleX(1);}
+    .nav-cta{background:var(--ink);color:var(--white)!important;padding:11px 24px;border-radius:2px;font-size:.83rem!important;font-weight:600!important;}
+    .nav-cta::after{display:none;}
+    .nav-cta:hover{background:var(--brass-deep);}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
+    .nav-toggle span{width:22px;height:2px;background:var(--ink);}
 
-    /* Navigation */
-    .nav {
-      height: 82px;
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(245,242,236,.94);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(37,40,32,.09);
-    }
-    .nav-inner {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; min-width: 200px; }
-    .brand img { width: 43px; height: 43px; object-fit: contain; }
-    .brand-name { font-size: 13px; letter-spacing: .15em; font-weight: 700; }
-    .brand-sub { margin-top: 4px; font-size: 8px; letter-spacing: .19em; color: var(--muted); }
-    .nav-links { display: flex; align-items: center; gap: clamp(18px, 3vw, 38px); }
-    .nav-links a { font-size: 11px; color: #4e5048; transition: color .2s; }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-cta {
-      border: 1px solid var(--ink);
-      padding: 13px 18px;
-      font-size: 10px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      transition: .2s;
-    }
-    .nav-cta:hover { background: var(--ink); color: white; }
-    .menu-toggle { display: none; border: 0; background: none; font-size: 24px; }
+    /* HERO — split editorial layout */
+    .hero{padding:150px 0 90px;overflow:hidden;}
+    .hero-grid{display:grid;grid-template-columns:1fr 0.9fr;gap:60px;align-items:center;}
+    .hero-eyebrow{color:var(--brass-deep);}
+    .hero h1{font-size:clamp(2.4rem,4.6vw,3.6rem);line-height:1.08;margin-bottom:24px;}
+    .hero h1 em{font-style:italic;color:var(--brass-deep);font-weight:500;}
+    .hero p{color:var(--ink-soft);font-size:1.08rem;line-height:1.75;margin-bottom:36px;max-width:460px;font-weight:300;}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 30px;font-size:.9rem;font-weight:600;letter-spacing:.02em;text-decoration:none;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:.25s;}
+    .btn-brass{background:var(--brass);color:var(--white);}
+    .btn-brass:hover{background:var(--brass-deep);transform:translateY(-2px);box-shadow:0 10px 26px rgba(139,92,38,.3);}
+    .btn-line{background:transparent;color:var(--ink);border-color:var(--ink);}
+    .btn-line:hover{background:var(--ink);color:var(--white);}
+    .btn-dark{background:var(--ink);color:var(--white);}
+    .btn-dark:hover{background:var(--brass-deep);}
+    .hero-stats{display:flex;gap:34px;}
+    .hero-stats div{border-left:2px solid var(--brass);padding-left:14px;}
+    .hero-stats b{display:block;font-family:'Fraunces',serif;font-size:1.5rem;}
+    .hero-stats span{font-size:.75rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;}
+    .hero-collage{position:relative;height:520px;}
+    .hero-collage img{position:absolute;object-fit:cover;border-radius:2px;box-shadow:0 30px 60px -18px rgba(33,29,25,.3);}
+    .hc-1{width:72%;height:78%;top:0;right:0;}
+    .hc-2{width:52%;height:46%;bottom:0;left:0;border:6px solid var(--paper);}
 
-    /* Hero */
-    .hero { padding: 26px 0 0; }
-    .hero-panel {
-      min-height: min(720px, calc(100svh - 110px));
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: end;
-      background: #777568;
-      color: white;
-    }
-    .hero-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-    .hero-panel::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(21,24,19,.65), rgba(21,24,19,.12) 78%),
-                  linear-gradient(0deg, rgba(21,24,19,.38), transparent 50%);
-    }
-    .hero-content { position: relative; z-index: 1; padding: clamp(32px, 7vw, 100px); max-width: 850px; }
-    .hero-content .eyebrow { color: #e1d4bd; }
-    .hero h1 {
-      margin: 24px 0;
-      font: 400 clamp(48px, 7.5vw, 100px)/.99 var(--serif);
-      letter-spacing: -.045em;
-    }
-    .hero h1 em { color: #d9c6a5; font-weight: 400; }
-    .hero-copy { max-width: 440px; color: rgba(255,255,255,.82); font-size: 14px; line-height: 1.9; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 23px;
-      border: 1px solid transparent;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      transition: .2s ease;
-    }
-    .btn-light { background: var(--white); color: var(--ink); }
-    .btn-light:hover { background: #e8dfcf; }
-    .btn-outline { border-color: rgba(255,255,255,.65); color: white; }
-    .btn-outline:hover { background: white; color: var(--ink); }
-    .hero-index {
-      position: absolute;
-      z-index: 2;
-      right: 35px;
-      bottom: 32px;
-      font-size: 10px;
-      letter-spacing: .15em;
-      color: rgba(255,255,255,.8);
-    }
+    /* SERVICES */
+    .services{background:var(--white);}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+    .service-card{background:var(--white);padding:42px 30px;position:relative;overflow:hidden;transition:.3s;}
+    .service-card::before{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:.3s;}
+    .service-card:hover::before{transform:scaleX(1);}
+    .service-card:hover{background:var(--paper);}
+    .service-num{font-family:'Fraunces',serif;font-style:italic;color:var(--brass);font-size:1rem;margin-bottom:24px;display:block;}
+    .service-card h3{font-size:1.2rem;margin-bottom:12px;}
+    .service-card p{color:var(--ink-soft);font-size:.9rem;line-height:1.65;font-weight:300;}
 
-    /* Intro */
-    .intro { padding: 92px 0 80px; }
-    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
-    .intro h2 { margin: 0; font: 400 clamp(32px, 4vw, 53px)/1.15 var(--serif); letter-spacing: -.03em; }
-    .intro h2 span { color: var(--olive); font-style: italic; }
-    .intro-copy { padding-top: 8px; max-width: 470px; }
-    .intro-copy p { color: var(--muted); font-size: 13px; line-height: 1.95; margin: 0 0 22px; }
-    .text-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 16px;
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 8px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .text-link span { font-size: 18px; transition: transform .2s; }
-    .text-link:hover span { transform: translateX(5px); }
+    /* COLLECTIONS */
+    .collections{background:var(--stone);}
+    .tab-bar{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:52px;}
+    .tab-btn{background:none;border:none;cursor:pointer;padding:15px 24px;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;color:var(--ink-soft);position:relative;transition:color .2s;}
+    .tab-btn::after{content:'';position:absolute;left:24px;right:24px;bottom:-1px;height:2px;background:var(--brass);transform:scaleX(0);transition:transform .25s;transform-origin:left;}
+    .tab-btn.active{color:var(--ink);} .tab-btn.active::after{transform:scaleX(1);}
+    .tab-panel{display:none;animation:fadeIn .45s ease;} .tab-panel.active{display:block;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 
-    /* Collections */
-    .collections { background: var(--white); }
-    .collection-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
-    .tab {
-      padding: 12px 17px;
-      background: transparent;
-      border: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    .tab.active, .tab:hover { background: var(--olive-dark); border-color: var(--olive-dark); color: white; }
-    .collection-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .product-card { min-width: 0; }
-    .product-image-wrap { position: relative; overflow: hidden; background: #e9e5dc; aspect-ratio: 3/4; }
-    .product-image { height: 100%; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
-    .product-card:hover .product-image { transform: scale(1.045); }
-    .product-tag {
-      position: absolute;
-      left: 12px;
-      top: 12px;
-      background: rgba(255,253,249,.92);
-      padding: 8px 10px;
-      font-size: 9px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .product-info { display: flex; align-items: start; justify-content: space-between; gap: 10px; padding: 15px 0; }
-    .product-info h3 { margin: 0; font-size: 12px; font-weight: 600; }
-    .product-info p { margin: 6px 0 0; color: var(--muted); font-size: 10px; }
-    .product-arrow { font-size: 18px; color: var(--olive); }
-    .collection-footer { margin-top: 35px; display: flex; justify-content: center; }
+    .collection-feature{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;margin-bottom:60px;align-items:center;}
+    .collection-feature img{width:100%;height:440px;object-fit:cover;border-radius:2px;box-shadow:0 30px 60px -20px rgba(33,29,25,.25);}
+    .collection-feature.reverse{grid-template-columns:.9fr 1.1fr;}
+    .collection-feature.reverse img{order:2;}
+    .collection-feature-text h3{font-size:1.9rem;margin-bottom:18px;line-height:1.2;}
+    .collection-feature-text p{color:var(--ink-soft);font-size:1rem;line-height:1.75;margin-bottom:26px;font-weight:300;}
+    .feature-stats{display:flex;gap:32px;}
+    .feature-stats div{border-left:2px solid var(--brass);padding-left:14px;}
+    .feature-stats b{display:block;font-family:'Fraunces',serif;font-size:1.4rem;}
+    .feature-stats span{font-size:.76rem;color:var(--ink-soft);text-transform:uppercase;}
 
-    /* Feature */
-    .feature { background: #e9e6de; }
-    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-    .feature-image { height: 590px; object-fit: cover; }
-    .feature-copy { max-width: 480px; }
-    .feature-copy h2 { font: 400 clamp(36px, 4vw, 57px)/1.1 var(--serif); letter-spacing: -.035em; margin: 18px 0 25px; }
-    .feature-copy p { color: #6f7067; font-size: 13px; line-height: 1.9; }
-    .feature-list { margin: 30px 0; border-top: 1px solid #d1cec5; }
-    .feature-list div { padding: 15px 0; border-bottom: 1px solid #d1cec5; display: flex; justify-content: space-between; gap: 20px; font-size: 11px; }
-    .feature-list span:last-child { color: var(--muted); }
-
-    /* Work */
-    .work-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 16px; align-items: start; }
-    .work-card:nth-child(2) { margin-top: 55px; }
-    .work-card:nth-child(3) { margin-top: 110px; }
-    .work-card img { aspect-ratio: 4/5; background: #e3dfd6; }
-    .work-card h3 { font: 400 23px var(--serif); margin: 16px 0 6px; }
-    .work-card p { margin: 0; color: var(--muted); font-size: 11px; }
-
-    /* Values */
-    .values { background: var(--olive-dark); color: #f8f5ee; }
-    .values .section-head p { color: #c5c5b8; }
-    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.2); }
-    .value-card { padding: 32px 30px 20px 0; }
-    .value-card + .value-card { border-left: 1px solid rgba(255,255,255,.2); padding-left: 30px; }
-    .value-number { color: #c7b38f; font: 400 28px var(--serif); }
-    .value-card h3 { font: 400 24px var(--serif); margin: 24px 0 12px; }
-    .value-card p { color: #c5c5b8; font-size: 12px; line-height: 1.9; max-width: 290px; }
-
-    /* Contact */
-    .contact { background: var(--white); }
-    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; }
-    .contact-copy h2 { font: 400 clamp(38px, 4.5vw, 60px)/1.08 var(--serif); letter-spacing: -.04em; margin: 18px 0; }
-    .contact-copy p { max-width: 380px; color: var(--muted); font-size: 13px; line-height: 1.9; }
-    .contact-detail { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); }
-    .contact-detail span { display: block; color: var(--muted); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; }
-    .contact-detail a { font-size: 13px; }
-    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 18px; }
-    .field { display: flex; flex-direction: column; gap: 9px; }
-    .field.full { grid-column: 1 / -1; }
-    .field label { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #5e6057; }
-    .field input, .field textarea, .field select {
-      width: 100%;
-      border: 0;
-      border-bottom: 1px solid #cfcfc5;
-      border-radius: 0;
-      padding: 12px 0;
-      outline: none;
-      background: transparent;
-      color: var(--ink);
-      font-size: 13px;
+    .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px;}
+    .photo-card{position:relative;background:var(--white);overflow:hidden;border-radius:2px;box-shadow:0 2px 12px rgba(33,29,25,.05);transition:.3s;}
+    .photo-card:hover{transform:translateY(-6px);box-shadow:0 22px 38px -16px rgba(33,29,25,.22);}
+    .photo-card img{width:100%;height:220px;object-fit:cover;}
+    .photo-card figcaption{padding:14px 16px;font-size:.88rem;font-weight:600;}
+    .photo-card figcaption .code{display:block;font-weight:400;font-size:.74rem;color:#9c9184;margin-top:3px;}
+    .save-btn{
+        position:absolute;top:10px;right:10px;z-index:2;width:32px;height:32px;border-radius:50%;
+        background:rgba(255,253,250,.92);border:1px solid var(--line);color:var(--ink);
+        font-size:1.1rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+        transition:all .2s ease;
     }
-    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--olive); }
-    .field textarea { min-height: 105px; resize: vertical; }
-    .form-note { grid-column: 1 / -1; color: var(--muted); font-size: 10px; line-height: 1.7; }
-    .contact-form .btn { justify-self: start; background: var(--olive-dark); color: white; border: 0; }
-    .contact-form .btn:hover { background: var(--olive); }
+    .save-btn:hover{background:var(--brass);color:var(--white);border-color:var(--brass);}
+    .save-btn.saved{background:var(--brass);color:var(--white);border-color:var(--brass);}
+    .save-btn.saved::after{content:'✓';} .save-btn:not(.saved)::after{content:'+';}
+    .tab-footnote{text-align:center;color:var(--ink-soft);font-style:italic;font-size:.95rem;margin-top:40px;font-family:'Fraunces',serif;}
 
-    /* Footer */
-    footer { background: #24271f; color: #f5f2ec; padding: 55px 0 25px; }
-    .footer-top { display: flex; justify-content: space-between; gap: 35px; padding-bottom: 45px; }
-    .footer-brand { font-size: 13px; letter-spacing: .16em; font-weight: 700; }
-    .footer-brand p { color: #aeb0a4; font-size: 11px; letter-spacing: 0; font-weight: 400; line-height: 1.8; max-width: 280px; }
-    .footer-links { display: flex; gap: 50px; }
-    .footer-links h4 { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: #b9aa8c; margin: 0 0 17px; }
-    .footer-links a { display: block; color: #c6c7bd; font-size: 11px; margin: 12px 0; }
-    .footer-links a:hover { color: white; }
-    .footer-bottom { border-top: 1px solid #45483e; padding-top: 20px; display: flex; justify-content: space-between; gap: 20px; color: #aeb0a4; font-size: 9px; letter-spacing: .04em; }
+    .plywood-panel{background:var(--ink);color:var(--white);border-radius:4px;padding:52px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+    .plywood-panel h3{color:var(--white);font-size:1.7rem;margin-bottom:14px;}
+    .plywood-panel p{color:rgba(255,255,255,.7);font-weight:300;line-height:1.75;}
+    .tag-list{display:flex;flex-wrap:wrap;gap:10px;}
+    .tag-pill{border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.9);padding:10px 18px;border-radius:30px;font-size:.84rem;font-weight:500;transition:.2s;}
+    .tag-pill:hover{background:var(--brass);border-color:var(--brass);color:var(--white);}
 
-    @media (max-width: 900px) {
-      .container { width: min(100% - 40px, var(--max)); }
-      .nav-links { gap: 16px; }
-      .nav-links a { font-size: 10px; }
-      .brand { min-width: auto; }
-      .collection-grid { grid-template-columns: repeat(2, 1fr); }
-      .feature-grid, .contact-grid { gap: 40px; }
-      .feature-image { height: 480px; }
-      .work-grid { grid-template-columns: 1fr 1fr; }
-      .work-card:nth-child(3) { display: none; }
+    /* OUR WORK — real client photos, bento grid */
+    .work{background:var(--white);}
+    .work-bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:18px;}
+    .work-item{position:relative;overflow:hidden;border-radius:2px;cursor:default;}
+    .work-item picture,.work-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+    .work-item:hover img{transform:scale(1.06);}
+    .work-item .cap{position:absolute;left:0;right:0;bottom:0;padding:20px 18px 14px;
+        background:linear-gradient(0deg,rgba(20,17,14,.78),transparent);color:var(--white);
+        font-size:.85rem;font-weight:600;opacity:0;transform:translateY(6px);transition:.25s;}
+    .work-item:hover .cap{opacity:1;transform:translateY(0);}
+    .w-wide{grid-column:span 2;grid-row:span 2;}
+    .w-tall{grid-row:span 2;}
+
+    /* WHY US */
+    .whyus{background:var(--stone);}
+    .whyus-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+    .whyus-list{display:flex;flex-direction:column;gap:26px;margin-top:30px;}
+    .whyus-item{display:flex;gap:18px;}
+    .whyus-item .mark{flex:none;width:38px;height:38px;border-radius:50%;background:var(--brass);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;}
+    .whyus-item h4{font-size:1.04rem;margin-bottom:5px;}
+    .whyus-item p{color:var(--ink-soft);font-size:.9rem;line-height:1.6;font-weight:300;}
+    .whyus-img img{border-radius:2px;box-shadow:0 30px 60px -20px rgba(33,29,25,.25);}
+
+    /* FAQ */
+    .faq{background:var(--white);}
+    .faq-list{max-width:800px;margin:0 auto;}
+    .faq-item{border-bottom:1px solid var(--line);}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:24px 0;font-family:'Fraunces',serif;font-size:1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--ink);}
+    .faq-q .plus{font-size:1.4rem;color:var(--brass);transition:transform .25s;flex:none;}
+    .faq-item.open .plus{transform:rotate(45deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+    .faq-item.open .faq-a{max-height:200px;}
+    .faq-a p{color:var(--ink-soft);font-size:.94rem;line-height:1.7;padding-bottom:24px;font-weight:300;}
+
+    /* SHORTLIST TRAY */
+    .shortlist-fab{
+        position:fixed;bottom:28px;right:28px;z-index:900;background:var(--ink);color:var(--white);
+        border-radius:30px;padding:14px 22px;display:none;align-items:center;gap:10px;cursor:pointer;
+        box-shadow:0 12px 30px rgba(0,0,0,.25);font-size:.88rem;font-weight:600;border:none;
     }
-    @media (max-width: 640px) {
-      .container { width: calc(100% - 36px); }
-      .section { padding: 75px 0; }
-      .nav { height: 70px; }
-      .brand img { width: 36px; height: 36px; }
-      .brand-name { font-size: 11px; }
-      .brand-sub { font-size: 7px; }
-      .menu-toggle { display: block; }
-      .nav-cta { display: none; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        padding: 22px 24px 26px;
-        background: var(--paper);
-        border-bottom: 1px solid var(--line);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-      }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
-      .hero { padding-top: 12px; }
-      .hero-panel { min-height: 680px; min-height: 78svh; }
-      .hero-content { padding: 28px 24px 55px; }
-      .hero h1 { font-size: clamp(48px, 14vw, 74px); }
-      .hero-copy { font-size: 12px; }
-      .hero-index { right: 20px; bottom: 20px; }
-      .intro { padding: 65px 0; }
-      .intro-grid, .feature-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
-      .section-head { display: block; margin-bottom: 28px; }
-      .section-head p { margin-top: 16px; }
-      .collection-tabs { margin-top: 22px; }
-      .tab { padding: 10px 12px; font-size: 9px; }
-      .collection-grid { gap: 10px; }
-      .product-info h3 { font-size: 11px; }
-      .product-info p { font-size: 9px; }
-      .product-tag { left: 7px; top: 7px; padding: 6px 7px; font-size: 8px; }
-      .feature-image { height: 390px; }
-      .feature-copy h2 { font-size: 42px; }
-      .work-grid { gap: 12px; }
-      .work-card:nth-child(2) { margin-top: 35px; }
-      .work-card h3 { font-size: 19px; }
-      .values-grid { grid-template-columns: 1fr; }
-      .value-card, .value-card + .value-card { border-left: 0; border-bottom: 1px solid rgba(255,255,255,.2); padding: 25px 0; }
-      .value-card h3 { margin: 12px 0; }
-      .contact-form { grid-template-columns: 1fr; }
-      .field.full, .form-note { grid-column: auto; }
-      .footer-top { flex-direction: column; }
-      .footer-links { gap: 35px; }
-      .footer-bottom { flex-direction: column; }
+    .shortlist-fab.show{display:flex;}
+    .shortlist-fab .count{background:var(--brass);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;}
+    .shortlist-panel{
+        position:fixed;top:0;right:-380px;width:360px;height:100%;background:var(--white);z-index:1200;
+        box-shadow:-10px 0 40px rgba(0,0,0,.15);transition:right .3s ease;display:flex;flex-direction:column;
     }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    .shortlist-panel.open{right:0;}
+    .sp-head{padding:24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;}
+    .sp-head h3{font-size:1.2rem;}
+    .sp-close{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--ink-soft);}
+    .sp-items{flex:1;overflow-y:auto;padding:16px 24px;}
+    .sp-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.88rem;}
+    .sp-item .rm{background:none;border:none;color:var(--rust);cursor:pointer;font-size:.9rem;}
+    .sp-empty{color:var(--ink-soft);font-size:.9rem;padding:20px 0;text-align:center;}
+    .sp-foot{padding:20px 24px;border-top:1px solid var(--line);}
+    .shortlist-overlay{position:fixed;inset:0;background:rgba(20,17,14,.4);z-index:1100;display:none;}
+    .shortlist-overlay.show{display:block;}
+
+    /* CONTACT */
+    .contact{background:var(--ink);color:var(--white);}
+    .contact .section-head p{color:rgba(255,255,255,.65);}
+    .contact .eyebrow{color:var(--brass-pale);}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;}
+    .contact-info h2{color:var(--white);font-size:2.2rem;margin-bottom:20px;line-height:1.2;}
+    .contact-info p{color:rgba(255,255,255,.68);line-height:1.75;margin-bottom:32px;font-weight:300;}
+    .contact-line{display:flex;align-items:center;gap:16px;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.12);}
+    .contact-line .ico{width:40px;height:40px;border-radius:50%;border:1px solid var(--brass);display:flex;align-items:center;justify-content:center;color:var(--brass-pale);flex:none;}
+    .contact-line a{color:var(--white);text-decoration:none;font-weight:500;}
+    .contact-line span.label{display:block;font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.45);margin-bottom:4px;}
+    .shortlist-summary{background:rgba(177,121,58,.15);border:1px solid rgba(177,121,58,.4);border-radius:4px;padding:16px;margin-top:8px;font-size:.85rem;color:rgba(255,255,255,.85);display:none;}
+    .shortlist-summary.show{display:block;}
+
+    .contact-form-card{background:var(--paper);border-radius:4px;padding:44px;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+    .form-group{display:flex;flex-direction:column;}
+    .form-group.full{grid-column:1/-1;}
+    .form-group label{font-size:.8rem;font-weight:600;margin-bottom:7px;color:var(--ink);}
+    .form-group input,.form-group select,.form-group textarea{padding:12px 15px;font-size:.92rem;border:1px solid var(--line);border-radius:2px;font-family:'Inter',sans-serif;background:var(--white);transition:border-color .2s;}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--brass);}
+    .form-group textarea{resize:vertical;min-height:100px;}
+    .checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    .checkbox-label{display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--ink-soft);cursor:pointer;}
+    .checkbox-label input{width:15px;height:15px;accent-color:var(--brass);}
+    .btn-submit{width:100%;margin-top:6px;background:var(--ink);color:var(--white);padding:16px;}
+    .btn-submit:hover{background:var(--brass-deep);}
+    .form-note{text-align:center;font-size:.78rem;color:var(--ink-soft);margin-top:12px;font-style:italic;}
+
+    footer{background:#171410;color:rgba(255,255,255,.6);padding:64px 0 28px;}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:56px;margin-bottom:50px;}
+    .footer-brand img{height:42px;margin-bottom:16px;}
+    .footer-brand p{font-size:.88rem;line-height:1.65;max-width:320px;font-weight:300;}
+    .footer-col h5{color:var(--white);font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:18px;font-weight:600;}
+    .footer-col a{display:block;color:rgba(255,255,255,.55);text-decoration:none;font-size:.88rem;margin-bottom:11px;}
+    .footer-col a:hover{color:var(--brass-pale);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;color:rgba(255,255,255,.4);}
+
+    @media (max-width:980px){
+        .wrap,.nav-inner{padding-left:22px;padding-right:22px;}
+        .nav-links{position:fixed;top:68px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:flex-start;padding:22px;gap:18px;border-bottom:1px solid var(--line);transform:translateY(-150%);transition:.3s;}
+        .nav-links.open{transform:translateY(0);}
+        .nav-toggle{display:flex;}
+        .hero{padding-top:120px;}
+        .hero-grid{grid-template-columns:1fr;gap:40px;}
+        .hero-collage{height:360px;order:-1;}
+        .service-grid{grid-template-columns:1fr 1fr;}
+        .collection-feature,.collection-feature.reverse{grid-template-columns:1fr;gap:26px;}
+        .collection-feature.reverse img{order:0;}
+        .collection-feature img{height:300px;}
+        .whyus-grid{grid-template-columns:1fr;}
+        .work-bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;}
+        .w-wide{grid-column:span 2;}
+        .contact-grid{grid-template-columns:1fr;gap:40px;}
+        .footer-grid{grid-template-columns:1fr;gap:32px;}
+        .shortlist-panel{width:88%;right:-100%;}
     }
-  </style>
+    @media (max-width:640px){
+        section{padding:74px 0;}
+        .service-grid{grid-template-columns:1fr;}
+        .form-row,.checkbox-grid{grid-template-columns:1fr;}
+        .contact-form-card{padding:28px 20px;}
+        .work-bento{grid-template-columns:1fr 1fr;grid-auto-rows:140px;}
+        .hero-actions{flex-direction:column;align-items:stretch;}
+        .hero-stats{flex-wrap:wrap;gap:20px;}
+        .plywood-panel{grid-template-columns:1fr;padding:32px 22px;}
+    }
+</style>
 </head>
-
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="Cult and Habitat home">
-        <img src="Logo.png" alt="Cult & Habitat logo" onerror="this.style.display='none'">
-        <div>
-          <div class="brand-name">CULT & HABITAT</div>
-          <div class="brand-sub">SPACES FOR A BETTER YOU</div>
-        </div>
-      </a>
 
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#collections">Collections</a>
-        <a href="#about">Our Philosophy</a>
-        <a href="#work">Our Work</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <a class="nav-cta" href="#contact">Start a conversation ↗</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-panel">
-          <img class="hero-image" src="images/hero/hero-main.jpg" alt="Thoughtfully designed interior with refined materials" fetchpriority="high">
-          <div class="hero-content">
-            <div class="eyebrow">Materials · Craft · Living</div>
-            <h1>Surfaces that<br>make a space<br>feel <em>like yours.</em></h1>
-            <p class="hero-copy">A considered collection of surfaces and materials, chosen to bring character, warmth, and quiet distinction to the spaces you live in.</p>
-            <div class="hero-actions">
-              <a class="btn btn-light" href="#collections">Explore collections</a>
-              <a class="btn btn-outline" href="#about">Discover our approach</a>
-            </div>
-          </div>
-          <div class="hero-index">01 — MATERIALS WITH MEANING</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="intro" id="about">
-      <div class="container intro-grid">
-        <div>
-          <div class="eyebrow muted">A thoughtful point of view</div>
-          <h2>Good design begins with the things we <span>touch.</span></h2>
-        </div>
-        <div class="intro-copy">
-          <p>At CULT & HABITAT, we believe materials do more than finish a room. They shape its atmosphere, influence how it feels, and become part of everyday life.</p>
-          <p>Our collections bring together expressive finishes and versatile surfaces for designers, architects, and homeowners creating spaces with intention.</p>
-          <a class="text-link" href="#collections">Explore the collection <span>→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section collections" id="collections">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow muted">Explore the materials</div>
-            <h2>Made to be lived with.</h2>
-          </div>
-          <div>
-            <p>Discover finishes with distinct textures, tones, and character. Find the material that feels right for your space.</p>
-            <div class="collection-tabs" role="group" aria-label="Filter collections">
-              <button class="tab active" data-filter="all">All materials</button>
-              <button class="tab" data-filter="doorskin">Doorskin</button>
-              <button class="tab" data-filter="acrylic">Acrylic</button>
-              <button class="tab" data-filter="satvario">Satvario</button>
-              <button class="tab" data-filter="marble">Marble</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="collection-grid" id="collectionGrid">
-          <a class="product-card" data-category="doorskin" href="#contact">
-            <div class="product-image-wrap">
-              <img class="product-image" src="images/hero/doorskin_feat.jpg" alt="Doorskin surface collection" loading="lazy">
-              <span class="product-tag">01 / Doorskin</span>
-            </div>
-            <div class="product-info"><div><h3>Doorskin</h3><p>Texture for every threshold</p></div><span class="product-arrow">↗</span></div>
-          </a>
-          <a class="product-card" data-category="acrylic" href="#contact">
-            <div class="product-image-wrap">
-              <img class="product-image" src="images/hero/acrylic_feat.jpg" alt="Acrylic finish collection" loading="lazy">
-              <span class="product-tag">02 / Acrylic</span>
-            </div>
-            <div class="product-info"><div><h3>Acrylic</h3><p>Clarity and refined colour</p></div><span class="product-arrow">↗</span></div>
-          </a>
-          <a class="product-card" data-category="satvario" href="#contact">
-            <div class="product-image-wrap">
-              <img class="product-image" src="images/hero/satvario_feat.jpg" alt="Satvario surface collection" loading="lazy">
-              <span class="product-tag">03 / Satvario</span>
-            </div>
-            <div class="product-info"><div><h3>Satvario</h3><p>Subtle pattern, lasting presence</p></div><span class="product-arrow">↗</span></div>
-          </a>
-          <a class="product-card" data-category="marble" href="#contact">
-            <div class="product-image-wrap">
-              <img class="product-image" src="images/hero/marble_feat.jpg" alt="Marble pattern collection" loading="lazy">
-              <span class="product-tag">04 / Marble</span>
-            </div>
-            <div class="product-info"><div><h3>Marble</h3><p>Natural inspiration, timeless appeal</p></div><span class="product-arrow">↗</span></div>
-          </a>
-        </div>
-
-        <div class="collection-footer">
-          <a class="btn" style="background:var(--olive-dark);color:white" href="#contact">Ask about our materials ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section feature">
-      <div class="container feature-grid">
-        <img class="feature-image" src="images/doorskin/doorskin_5.jpg" alt="Close-up of a doorskin finish" loading="lazy">
-        <div class="feature-copy">
-          <div class="eyebrow muted">The details make the difference</div>
-          <h2>Designed for the everyday. Chosen for the feeling.</h2>
-          <p>A surface is part of the experience of a room: the way light moves across it, the texture beneath your hand, and the harmony it creates with everything around it.</p>
-          <div class="feature-list">
-            <div><span>Doorskin</span><span>Expressive finishes</span></div>
-            <div><span>Acrylic</span><span>Clean, contemporary surfaces</span></div>
-            <div><span>Satvario</span><span>Distinctive visual character</span></div>
-            <div><span>Marble</span><span>Classic material inspiration</span></div>
-          </div>
-          <a class="text-link" href="#contact">Find your finish <span>→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="work">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow muted">Material in context</div>
-            <h2>Ideas for your space.</h2>
-          </div>
-          <p>Explore ways finishes can help set the tone—from calm and understated to bold and expressive.</p>
-        </div>
-        <div class="work-grid">
-          <article class="work-card">
-            <img src="images/acrylic/acrylic_48.jpg" alt="Acrylic finish inspiration" loading="lazy">
-            <h3>Quiet sophistication</h3>
-            <p>Clean lines. Considered finishes.</p>
-          </article>
-          <article class="work-card">
-            <img src="images/satvario/satvario_76.jpg" alt="Satvario finish inspiration" loading="lazy">
-            <h3>Texture & tone</h3>
-            <p>Materials that add depth.</p>
-          </article>
-          <article class="work-card">
-            <img src="images/marble/marble_147.jpg" alt="Marble finish inspiration" loading="lazy">
-            <h3>Timeless character</h3>
-            <p>Patterns inspired by nature.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section values">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow" style="color:#c7b38f">The CULT & HABITAT approach</div>
-            <h2>Thoughtful by design.</h2>
-          </div>
-          <p>We bring a considered perspective to the materials that shape the spaces around us.</p>
-        </div>
-        <div class="values-grid">
-          <article class="value-card">
-            <div class="value-number">01</div>
-            <h3>Considered selection</h3>
-            <p>A collection of finishes and patterns to help you explore the right mood and material for your project.</p>
-          </article>
-          <article class="value-card">
-            <div class="value-number">02</div>
-            <h3>Design-led thinking</h3>
-            <p>We look beyond the surface, considering how materials work with light, form, colour, and the wider space.</p>
-          </article>
-          <article class="value-card">
-            <div class="value-number">03</div>
-            <h3>Personal guidance</h3>
-            <p>Tell us about your project and the look you have in mind. We’ll help you explore suitable options from our collections.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy">
-          <div class="eyebrow muted">Let’s talk materials</div>
-          <h2>Have a space<br>in mind?</h2>
-          <p>Share a little about your project, the materials you’re exploring, or the finish you’re looking for. We’d be happy to hear from you.</p>
-          <div class="contact-detail">
-            <span>Email</span>
-            <a href="mailto:brucewayne180710@gmail.com">brucewayne180710@gmail.com</a>
-          </div>
-        </div>
-
-        <form class="contact-form" id="contactForm">
-          <div class="field">
-            <label for="name">Your name</label>
-            <input id="name" name="name" autocomplete="name" placeholder="Name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email address</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-          </div>
-          <div class="field">
-            <label for="phone">Phone (optional)</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number">
-          </div>
-          <div class="field">
-            <label for="interest">Interested in</label>
-            <select id="interest" name="interest">
-              <option value="General enquiry">Choose a collection</option>
-              <option>Doorskin</option>
-              <option>Acrylic</option>
-              <option>Satvario</option>
-              <option>Marble</option>
-              <option>Multiple collections</option>
-              <option>General enquiry</option>
-            </select>
-          </div>
-          <div class="field full">
-            <label for="message">Tell us about your project</label>
-            <textarea id="message" name="message" placeholder="A little about your space, project, or what you’re looking for..." required></textarea>
-          </div>
-          <p class="form-note">Submitting opens your email application with your enquiry prepared. You can review it before sending.</p>
-          <button class="btn" type="submit">Prepare enquiry <span style="margin-left:14px">↗</span></button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          CULT & HABITAT
-          <p>Spaces for a Better You.<br>Thoughtful materials for considered spaces.</p>
-        </div>
-        <div class="footer-links">
-          <div>
-            <h4>Explore</h4>
+<header class="nav" id="siteNav">
+    <div class="nav-inner">
+        <a class="nav-logo" href="#top"><img src="Logo.png" alt="Cult & Habitat"></a>
+        <nav class="nav-links" id="navLinks">
             <a href="#collections">Collections</a>
-            <a href="#about">Our philosophy</a>
-            <a href="#work">Our work</a>
-          </div>
-          <div>
-            <h4>Connect</h4>
-            <a href="#contact">Enquiries</a>
-            <a href="mailto:brucewayne180710@gmail.com">Email us</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span id="year"></span> CULT & HABITAT. All rights reserved.</span>
-        <span>Materials with meaning.</span>
-      </div>
+            <a href="#work">Our Work</a>
+            <a href="#services">Services</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact" class="nav-cta">Get in Touch</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
-  </footer>
+</header>
 
-  <script>
-    // Mobile navigation
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+<!-- HERO -->
+<section class="hero" id="top">
+    <div class="wrap hero-grid">
+        <div>
+            <span class="eyebrow hero-eyebrow">Surfaces · Doors · Laminates · Execution</span>
+            <h1>Spaces built with <em>intention</em>, finished with craft</h1>
+            <p>From the first material sample to the final fitting, we supply and install premium laminates, acrylics, doors and engineered wood — so your project looks as good finished as it did on paper.</p>
+            <div class="hero-actions">
+                <a href="#collections" class="btn btn-brass">Browse the Catalogue</a>
+                <a href="#contact" class="btn btn-line">Request a Consultation</a>
+            </div>
+            <div class="hero-stats">
+                <div><b>150+</b><span>Curated Designs</span></div>
+                <div><b>5</b><span>Collections</span></div>
+                <div><b>1mm</b><span>Premium Laminate</span></div>
+            </div>
+        </div>
+        <div class="hero-collage">
+            <img class="hc-1" src="images/hero/hero-main.jpg" alt="Premium interior finish">
+            <img class="hc-2" src="images/doorskin/doorskin_3.jpg" alt="Door skin design">
+        </div>
+    </div>
+</section>
 
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-      menuToggle.textContent = isOpen ? "×" : "☰";
-    });
+<!-- SERVICES -->
+<section class="services" id="services">
+    <div class="wrap">
+        <div class="section-head">
+            <span class="eyebrow">What We Do</span>
+            <h2>Full-service, from selection to site</h2>
+            <p>We're not just a catalogue — we manage the whole material journey for your project, end to end.</p>
+        </div>
+        <div class="service-grid">
+            <div class="service-card"><span class="service-num">01</span><h3>Design Consultation</h3><p>We walk through your space and brief with you, then shortlist finishes that suit the light, layout and budget.</p></div>
+            <div class="service-card"><span class="service-num">02</span><h3>Material Sourcing</h3><p>Direct access to premium laminate, acrylic, door and plywood ranges — sampled and compared before you commit.</p></div>
+            <div class="service-card"><span class="service-num">03</span><h3>Site Execution</h3><p>Measured, fabricated and installed by our team — one point of contact from order to fitting.</p></div>
+            <div class="service-card"><span class="service-num">04</span><h3>Project Management</h3><p>Timelines, coordination with other trades, and quality checks handled, so you're not chasing anyone.</p></div>
+        </div>
+    </div>
+</section>
 
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation");
-        menuToggle.textContent = "☰";
-      });
-    });
+<!-- COLLECTIONS -->
+<section class="collections" id="collections">
+    <div class="wrap">
+        <div class="section-head center">
+            <span class="eyebrow">The Catalogue</span>
+            <h2>Collections worth building around</h2>
+            <p>A curated view of our range — real finishes, real textures. Tap + on anything you like to save it to your enquiry.</p>
+        </div>
 
-    // Collection category filter
-    const tabs = document.querySelectorAll(".tab");
-    const cards = document.querySelectorAll(".product-card");
+        <div class="tab-bar" id="tabBar">
+            <button class="tab-btn active" data-tab="doorskin">Door Skin</button>
+            <button class="tab-btn" data-tab="acrylic">Synergy Acrylics</button>
+            <button class="tab-btn" data-tab="satvario">Satvario Laminates</button>
+            <button class="tab-btn" data-tab="marble">Marble &amp; Rustic</button>
+            <button class="tab-btn" data-tab="plywood">Engineered Wood</button>
+        </div>
 
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        tabs.forEach(item => item.classList.remove("active"));
-        tab.classList.add("active");
+        <div class="tab-panel active" id="panel-doorskin">
+            <div class="collection-feature">
+                <img src="images/hero/doorskin_feat.jpg" alt="Door Skin featured design">
+                <div class="collection-feature-text">
+                    <span class="eyebrow">Door Skin</span>
+                    <h3>Character at the front door</h3>
+                    <p>Digital, textured and premium finishes engineered onto durable door skins — the detail that sets a home apart before anyone steps inside.</p>
+                    <div class="feature-stats"><div><b>40+</b><span>Designs</span></div><div><b>7×3.25ft</b><span>Standard size</span></div><div><b>Custom</b><span>Sizing available</span></div></div>
+                </div>
+            </div>
+            <div class="photo-grid">
+                <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 02" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_5.jpg" alt="Door Skin — Design 02" loading="lazy">
+                <figcaption>Door Skin — Design 02</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 03" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_8.jpg" alt="Door Skin — Design 03" loading="lazy">
+                <figcaption>Door Skin — Design 03</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 04" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_10.jpg" alt="Door Skin — Design 04" loading="lazy">
+                <figcaption>Door Skin — Design 04</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 05" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_13.jpg" alt="Door Skin — Design 05" loading="lazy">
+                <figcaption>Door Skin — Design 05</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 06" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_16.jpg" alt="Door Skin — Design 06" loading="lazy">
+                <figcaption>Door Skin — Design 06</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 07" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_18.jpg" alt="Door Skin — Design 07" loading="lazy">
+                <figcaption>Door Skin — Design 07</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 08" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_21.jpg" alt="Door Skin — Design 08" loading="lazy">
+                <figcaption>Door Skin — Design 08</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 09" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_24.jpg" alt="Door Skin — Design 09" loading="lazy">
+                <figcaption>Door Skin — Design 09</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 10" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_26.jpg" alt="Door Skin — Design 10" loading="lazy">
+                <figcaption>Door Skin — Design 10</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 11" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_29.jpg" alt="Door Skin — Design 11" loading="lazy">
+                <figcaption>Door Skin — Design 11</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 12" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_31.jpg" alt="Door Skin — Design 12" loading="lazy">
+                <figcaption>Door Skin — Design 12</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 13" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_34.jpg" alt="Door Skin — Design 13" loading="lazy">
+                <figcaption>Door Skin — Design 13</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 14" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_37.jpg" alt="Door Skin — Design 14" loading="lazy">
+                <figcaption>Door Skin — Design 14</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 15" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_39.jpg" alt="Door Skin — Design 15" loading="lazy">
+                <figcaption>Door Skin — Design 15</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="doorskin">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Door Skin — Design 16" data-code="" data-cat="doorskin">+</button>
+                <img src="images/doorskin/doorskin_42.jpg" alt="Door Skin — Design 16" loading="lazy">
+                <figcaption>Door Skin — Design 16</figcaption>
+            </figure>
+            </div>
+            <p class="tab-footnote">40+ additional Door Skin designs available — ask for the full range</p>
+        </div>
 
-        const filter = tab.dataset.filter;
-        cards.forEach(card => {
-          card.hidden = filter !== "all" && card.dataset.category !== filter;
+        <div class="tab-panel" id="panel-acrylic">
+            <div class="collection-feature reverse">
+                <img src="images/hero/acrylic_feat.jpg" alt="Synergy acrylic featured design">
+                <div class="collection-feature-text">
+                    <span class="eyebrow">Synergy</span>
+                    <h3>High-shine acrylic surfaces</h3>
+                    <p>UV mirror finishes, marble-effect panels and anti-scratch (6H) acrylic sheets built for kitchens, wardrobes and feature walls that need to hold their shine.</p>
+                    <div class="feature-stats"><div><b>6H</b><span>Anti-scratch</span></div><div><b>20+</b><span>Finishes</span></div><div><b>200×200</b><span>Sheet sizes (mm)</span></div></div>
+                </div>
+            </div>
+            <div class="photo-grid">
+                <figure class="photo-card" data-cat="acrylic">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Uv Mirror" data-code="KAL8902" data-cat="acrylic">+</button>
+                <img src="images/acrylic/acrylic_48.jpg" alt="Uv Mirror" loading="lazy">
+                <figcaption>Uv Mirror <span class='code'>KAL8902</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="acrylic">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Fluted Solid" data-code="KAL8804" data-cat="acrylic">+</button>
+                <img src="images/acrylic/acrylic_50.jpg" alt="Fluted Solid" loading="lazy">
+                <figcaption>Fluted Solid <span class='code'>KAL8804</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="acrylic">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="RICHPalettes" data-code="KAL8802" data-cat="acrylic">+</button>
+                <img src="images/acrylic/acrylic_51.jpg" alt="RICHPalettes" loading="lazy">
+                <figcaption>RICHPalettes <span class='code'>KAL8802</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="acrylic">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Marble" data-code="KAL8701" data-cat="acrylic">+</button>
+                <img src="images/acrylic/acrylic_53.jpg" alt="Marble" loading="lazy">
+                <figcaption>Marble <span class='code'>KAL8701</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="acrylic">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Marble" data-code="KAL8704" data-cat="acrylic">+</button>
+                <img src="images/acrylic/acrylic_54.jpg" alt="Marble" loading="lazy">
+                <figcaption>Marble <span class='code'>KAL8704</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="acrylic">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Sparkle" data-code="KAL8302" data-cat="acrylic">+</button>
+                <img src="images/acrylic/acrylic_56.jpg" alt="Sparkle" loading="lazy">
+                <figcaption>Sparkle <span class='code'>KAL8302</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="acrylic">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Sparkle" data-code="KAL8308" data-cat="acrylic">+</button>
+                <img src="images/acrylic/acrylic_58.jpg" alt="Sparkle" loading="lazy">
+                <figcaption>Sparkle <span class='code'>KAL8308</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="acrylic">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Mettalic" data-code="KAL8401" data-cat="acrylic">+</button>
+                <img src="images/acrylic/acrylic_59.jpg" alt="Mettalic" loading="lazy">
+                <figcaption>Mettalic <span class='code'>KAL8401</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="acrylic">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Matt" data-code="KAL8501" data-cat="acrylic">+</button>
+                <img src="images/acrylic/acrylic_61.jpg" alt="Matt" loading="lazy">
+                <figcaption>Matt <span class='code'>KAL8501</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="acrylic">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Solid Gloss" data-code="KAL8101" data-cat="acrylic">+</button>
+                <img src="images/acrylic/acrylic_62.jpg" alt="Solid Gloss" loading="lazy">
+                <figcaption>Solid Gloss <span class='code'>KAL8101</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="acrylic">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Solid Gloss" data-code="KAL8116" data-cat="acrylic">+</button>
+                <img src="images/acrylic/acrylic_64.jpg" alt="Solid Gloss" loading="lazy">
+                <figcaption>Solid Gloss <span class='code'>KAL8116</span></figcaption>
+            </figure>
+            </div>
+            <p class="tab-footnote">20+ additional acrylic finishes available — ask for the full range</p>
+        </div>
+
+        <div class="tab-panel" id="panel-satvario">
+            <div class="collection-feature">
+                <img src="images/hero/satvario_feat.jpg" alt="Satvario featured design">
+                <div class="collection-feature-text">
+                    <span class="eyebrow">Satvario</span>
+                    <h3>The 1mm luxury laminate range</h3>
+                    <p>Our largest and most versatile collection — synchronised textures, polished veneers, marble replicas and solid colours, all in a durable 1mm laminate.</p>
+                    <div class="feature-stats"><div><b>65+</b><span>Designs</span></div><div><b>1mm</b><span>Thickness</span></div><div><b>8×4ft</b><span>Full sheet</span></div></div>
+                </div>
+            </div>
+            <div class="photo-grid">
+                <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Synchronised Textured Veneer" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_76.jpg" alt="Synchronised Textured Veneer" loading="lazy">
+                <figcaption>Synchronised Textured Veneer</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Polished Veneer Series" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_79.jpg" alt="Polished Veneer Series" loading="lazy">
+                <figcaption>Polished Veneer Series</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Zeromatt Veneer" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_83.jpg" alt="Zeromatt Veneer" loading="lazy">
+                <figcaption>Zeromatt Veneer</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Chiffon" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_86.jpg" alt="Chiffon" loading="lazy">
+                <figcaption>Chiffon</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Fiber Wood" data-code="ALPHA" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_90.jpg" alt="Fiber Wood" loading="lazy">
+                <figcaption>Fiber Wood <span class='code'>ALPHA</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Lauren Oak" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_93.jpg" alt="Lauren Oak" loading="lazy">
+                <figcaption>Lauren Oak</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Gloss" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_97.jpg" alt="Gloss" loading="lazy">
+                <figcaption>Gloss</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Satvario Gloss" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_101.jpg" alt="Satvario Gloss" loading="lazy">
+                <figcaption>Satvario Gloss</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Satvario Gloss" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_104.jpg" alt="Satvario Gloss" loading="lazy">
+                <figcaption>Satvario Gloss</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="135W X 90H Mm" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_108.jpg" alt="135W X 90H Mm" loading="lazy">
+                <figcaption>135W X 90H Mm</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Twinkle Lustrous" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_111.jpg" alt="Twinkle Lustrous" loading="lazy">
+                <figcaption>Twinkle Lustrous</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Pastel Colors ( Silky Matt )" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_115.jpg" alt="Pastel Colors ( Silky Matt )" loading="lazy">
+                <figcaption>Pastel Colors ( Silky Matt )</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Feather Touch" data-code="ALPHA" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_118.jpg" alt="Feather Touch" loading="lazy">
+                <figcaption>Feather Touch <span class='code'>ALPHA</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Natura L Pride" data-code="NO111" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_122.jpg" alt="Natura L Pride" loading="lazy">
+                <figcaption>Natura L Pride <span class='code'>NO111</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Olivera" data-code="" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_125.jpg" alt="Olivera" loading="lazy">
+                <figcaption>Olivera</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="satvario">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Suede Finish" data-code="NO125" data-cat="satvario">+</button>
+                <img src="images/satvario/satvario_129.jpg" alt="Suede Finish" loading="lazy">
+                <figcaption>Suede Finish <span class='code'>NO125</span></figcaption>
+            </figure>
+            </div>
+            <p class="tab-footnote">65+ Satvario designs across texture, veneer, marble and gloss — ask for the full range</p>
+        </div>
+
+        <div class="tab-panel" id="panel-marble">
+            <div class="collection-feature reverse">
+                <img src="images/hero/marble_feat.jpg" alt="Marble series featured design">
+                <div class="collection-feature-text">
+                    <span class="eyebrow">Marble &amp; Rustic Series</span>
+                    <h3>Raw texture, refined finish</h3>
+                    <p>Where natural stone character meets laminate practicality — earthy rustic tones and dramatic marble veining for warm, timeless interiors.</p>
+                    <div class="feature-stats"><div><b>35+</b><span>Patterns</span></div><div><b>Matt</b><span>&amp; gloss</span></div><div><b>New</b><span>Seasonal drops</span></div></div>
+                </div>
+            </div>
+            <div class="photo-grid">
+                <figure class="photo-card" data-cat="marble">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Rustic Design" data-code="" data-cat="marble">+</button>
+                <img src="images/marble/marble_147.jpg" alt="Rustic Design" loading="lazy">
+                <figcaption>Rustic Design</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="marble">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Rustic Design" data-code="" data-cat="marble">+</button>
+                <img src="images/marble/marble_150.jpg" alt="Rustic Design" loading="lazy">
+                <figcaption>Rustic Design</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="marble">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Divine Cedar" data-code="" data-cat="marble">+</button>
+                <img src="images/marble/marble_153.jpg" alt="Divine Cedar" loading="lazy">
+                <figcaption>Divine Cedar</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="marble">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Chiffon" data-code="" data-cat="marble">+</button>
+                <img src="images/marble/marble_156.jpg" alt="Chiffon" loading="lazy">
+                <figcaption>Chiffon</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="marble">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Polyester Finish" data-code="" data-cat="marble">+</button>
+                <img src="images/marble/marble_159.jpg" alt="Polyester Finish" loading="lazy">
+                <figcaption>Polyester Finish</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="marble">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Criss Cross" data-code="" data-cat="marble">+</button>
+                <img src="images/marble/marble_162.jpg" alt="Criss Cross" loading="lazy">
+                <figcaption>Criss Cross</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="marble">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Flute Matt" data-code="FM" data-cat="marble">+</button>
+                <img src="images/marble/marble_165.jpg" alt="Flute Matt" loading="lazy">
+                <figcaption>Flute Matt <span class='code'>FM</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="marble">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Reverse Flute" data-code="RVF" data-cat="marble">+</button>
+                <img src="images/marble/marble_168.jpg" alt="Reverse Flute" loading="lazy">
+                <figcaption>Reverse Flute <span class='code'>RVF</span></figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="marble">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Wonder" data-code="" data-cat="marble">+</button>
+                <img src="images/marble/marble_171.jpg" alt="Wonder" loading="lazy">
+                <figcaption>Wonder</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="marble">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Feather Touch" data-code="" data-cat="marble">+</button>
+                <img src="images/marble/marble_174.jpg" alt="Feather Touch" loading="lazy">
+                <figcaption>Feather Touch</figcaption>
+            </figure>
+            <figure class="photo-card" data-cat="marble">
+                <button class="save-btn" type="button" aria-label="Save to enquiry" data-name="Feather Touch" data-code="" data-cat="marble">+</button>
+                <img src="images/marble/marble_177.jpg" alt="Feather Touch" loading="lazy">
+                <figcaption>Feather Touch</figcaption>
+            </figure>
+            </div>
+            <p class="tab-footnote">35+ additional marble &amp; rustic patterns available — ask for the full range</p>
+        </div>
+
+        <div class="tab-panel" id="panel-plywood">
+            <div class="plywood-panel">
+                <div>
+                    <span class="eyebrow" style="color:var(--brass-pale)">Engineered Wood</span>
+                    <h3>Built stronger, from the core out</h3>
+                    <p>4x pressed, 8×4ft assembled core, zero-gap construction — the structural backbone for cabinetry, doors and furniture that needs to last.</p>
+                </div>
+                <div class="tag-list">
+                    <div class="tag-pill">Calibrated Plywood</div><div class="tag-pill">Fire Retardant Ply</div>
+                    <div class="tag-pill">Marine Grade</div><div class="tag-pill">BWR Grade</div>
+                    <div class="tag-pill">Flush Doors</div><div class="tag-pill">Prelaminate Doors</div>
+                    <div class="tag-pill">Block Board</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OUR WORK — real client project photos -->
+<section class="work" id="work">
+    <div class="wrap">
+        <div class="section-head">
+            <span class="eyebrow">Our Work</span>
+            <h2>Recent projects</h2>
+            <p>Completed installations, straight from site.</p>
+        </div>
+        <div class="work-bento">
+            <div class="work-item w-wide">
+                <picture>
+                    <source srcset="01_residential_interior_16x9.webp" type="image/webp">
+                    <img src="01_residential_interior_16x9.jpg" alt="Residential interior installation">
+                </picture>
+                <div class="cap">Residential Interior</div>
+            </div>
+            <div class="work-item w-tall">
+                <picture>
+                    <source srcset="05_crafted_door.webp" type="image/webp">
+                    <img src="05_crafted_door.jpg" alt="Crafted door installation">
+                </picture>
+                <div class="cap">Crafted Door</div>
+            </div>
+            <div class="work-item">
+                <picture>
+                    <source srcset="02_wall_art_detail.webp" type="image/webp">
+                    <img src="02_wall_art_detail.jpg" alt="Wall art detail finish">
+                </picture>
+                <div class="cap">Wall Detail</div>
+            </div>
+            <div class="work-item">
+                <picture>
+                    <source srcset="03_home_exterior.webp" type="image/webp">
+                    <img src="03_home_exterior.jpg" alt="Home exterior finish">
+                </picture>
+                <div class="cap">Home Exterior</div>
+            </div>
+            <div class="work-item w-tall" style="grid-column:2;">
+                <picture>
+                    <source srcset="04_custom_facade.webp" type="image/webp">
+                    <img src="04_custom_facade.jpg" alt="Custom facade installation">
+                </picture>
+                <div class="cap">Custom Facade</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="whyus" id="why">
+    <div class="wrap">
+        <div class="whyus-grid">
+            <div class="whyus-img"><img src="03_home_exterior.jpg" alt="Home exterior detail"></div>
+            <div>
+                <span class="eyebrow">Why Cult &amp; Habitat</span>
+                <h2>A single point of contact, start to finish</h2>
+                <div class="whyus-list">
+                    <div class="whyus-item"><div class="mark">1</div><div><h4>One supplier, one installer</h4><p>No handoffs between a materials vendor and a separate contractor — we do both.</p></div></div>
+                    <div class="whyus-item"><div class="mark">2</div><div><h4>Real samples before you decide</h4><p>See and feel the actual finish against your space before it's ordered.</p></div></div>
+                    <div class="whyus-item"><div class="mark">3</div><div><h4>Built for Indian sites &amp; climate</h4><p>Materials selected for scratch, moisture and wear resistance.</p></div></div>
+                    <div class="whyus-item"><div class="mark">4</div><div><h4>Clear costs, no surprises</h4><p>Material and installation costs upfront before work begins on site.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+    <div class="wrap">
+        <div class="section-head center">
+            <span class="eyebrow">Questions</span>
+            <h2>Before you reach out</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item open">
+                <button class="faq-q">Can I see physical samples before ordering? <span class="plus">+</span></button>
+                <div class="faq-a"><p>Yes — we bring real material samples to your site so you can check colour, texture and finish against your actual light and space before committing.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Do you handle installation, or just supply materials? <span class="plus">+</span></button>
+                <div class="faq-a"><p>Both. We measure, fabricate and install — one team, one point of contact, so nothing gets lost between a vendor and a separate contractor.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Can I mix designs from different collections in one project? <span class="plus">+</span></button>
+                <div class="faq-a"><p>Absolutely — a lot of projects combine Satvario laminates with Door Skin or Synergy acrylics. Save the ones you like and mention it in your enquiry.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">How soon can you start after I enquire? <span class="plus">+</span></button>
+                <div class="faq-a"><p>We respond within 24 hours to scope the project, then confirm a site visit and timeline based on your scale and material availability.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Do you work outside standard sheet sizes? <span class="plus">+</span></button>
+                <div class="faq-a"><p>Custom sizing is available on most collections — flag it in your enquiry and we'll confirm feasibility for your specific design.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="wrap">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <span class="eyebrow">Get In Touch</span>
+                <h2>Let's talk about your space</h2>
+                <p>Tell us what you're working on — a single room or a full fit-out — and we'll help you land on the right materials and a realistic plan to install them.</p>
+                <div class="contact-line">
+                    <div class="ico">@</div>
+                    <div><span class="label">Email</span><a href="mailto:brucewayne180710@gmail.com">brucewayne180710@gmail.com</a></div>
+                </div>
+                <div class="contact-line">
+                    <div class="ico">&#9679;</div>
+                    <div><span class="label">Response Time</span><span>Within 24 hours, every enquiry</span></div>
+                </div>
+                <div class="shortlist-summary" id="shortlistSummary"></div>
+            </div>
+
+            <div class="contact-form-card">
+                <form id="enquiryForm">
+                    <div class="form-row">
+                        <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" required></div>
+                        <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" required></div>
+                        <div class="form-group">
+                            <label for="role">I am a...</label>
+                            <select id="role" name="role" required>
+                                <option value="">Select one</option>
+                                <option value="architect">Architect</option>
+                                <option value="designer">Interior Designer</option>
+                                <option value="contractor">Contractor / Builder</option>
+                                <option value="homeowner">Homeowner</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group full">
+                        <label for="project">Tell us about your project</label>
+                        <textarea id="project" name="project" rows="4" placeholder="What are you building? What finishes interest you?" required></textarea>
+                    </div>
+                    <div class="form-group full">
+                        <label>Which collections interest you?</label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-label"><input type="checkbox" name="collections" value="satvario"> Satvario Laminates</label>
+                            <label class="checkbox-label"><input type="checkbox" name="collections" value="synergy"> Synergy Acrylics</label>
+                            <label class="checkbox-label"><input type="checkbox" name="collections" value="doorskin"> Door Skin</label>
+                            <label class="checkbox-label"><input type="checkbox" name="collections" value="marble"> Marble &amp; Rustic</label>
+                            <label class="checkbox-label"><input type="checkbox" name="collections" value="plywood"> Engineered Wood</label>
+                            <label class="checkbox-label"><input type="checkbox" name="collections" value="undecided"> Not sure yet</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Request Consultation</button>
+                    <p class="form-note">Opens your email client, addressed to brucewayne180710@gmail.com</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="wrap">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="Logo.png" alt="Cult & Habitat">
+                <p>Premium interior surfaces and full-service execution — laminates, acrylics, doors and engineered wood, sourced and installed.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Collections</h5>
+                <a href="#collections">Door Skin</a><a href="#collections">Synergy Acrylics</a>
+                <a href="#collections">Satvario Laminates</a><a href="#collections">Marble &amp; Rustic</a>
+            </div>
+            <div class="footer-col">
+                <h5>Studio</h5>
+                <a href="#services">Services</a><a href="#work">Our Work</a>
+                <a href="#faq">FAQ</a><a href="mailto:brucewayne180710@gmail.com">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; <span id="yr"></span> Cult &amp; Habitat. Spaces for a Better You.</span>
+            <span>brucewayne180710@gmail.com</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Shortlist tray -->
+<div class="shortlist-overlay" id="spOverlay"></div>
+<div class="shortlist-panel" id="spPanel">
+    <div class="sp-head"><h3>Your Enquiry List</h3><button class="sp-close" id="spClose">&times;</button></div>
+    <div class="sp-items" id="spItems"></div>
+    <div class="sp-foot"><a href="#contact" class="btn btn-dark" style="width:100%" id="spSend">Send Enquiry</a></div>
+</div>
+<button class="shortlist-fab" id="shortlistFab"><span class="count" id="shortlistCount">0</span> Saved Designs</button>
+
+<script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    // Tabs
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+            if (window.posthog) posthog.capture('collection_tab_viewed', { tab: btn.dataset.tab });
         });
-      });
     });
 
-    // Prepare an email draft. This does not transmit form data automatically.
-    document.getElementById("contactForm").addEventListener("submit", event => {
-      event.preventDefault();
-
-      const form = event.currentTarget;
-      if (!form.reportValidity()) return;
-
-      const data = new FormData(form);
-      const subject = `CULT & HABITAT enquiry — ${data.get("interest")}`;
-      const body = [
-        `Name: ${data.get("name")}`,
-        `Email: ${data.get("email")}`,
-        `Phone: ${data.get("phone") || "Not provided"}`,
-        `Interested in: ${data.get("interest")}`,
-        "",
-        "Project details:",
-        data.get("message")
-      ].join("\n");
-
-      const mailto = "mailto:brucewayne180710@gmail.com"
-        + "?subject=" + encodeURIComponent(subject)
-        + "&body=" + encodeURIComponent(body);
-
-      window.location.href = mailto;
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.closest('.faq-item');
+            const wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!wasOpen) item.classList.add('open');
+        });
     });
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    // ---------- Shortlist / Save-to-Enquiry (CRM lead enrichment) ----------
+    const SL_KEY = 'ch_shortlist';
+    function getShortlist(){ try { return JSON.parse(localStorage.getItem(SL_KEY)) || []; } catch(e){ return []; } }
+    function setShortlist(list){ localStorage.setItem(SL_KEY, JSON.stringify(list)); renderShortlist(); }
+
+    function renderShortlist(){
+        const list = getShortlist();
+        const fab = document.getElementById('shortlistFab');
+        const count = document.getElementById('shortlistCount');
+        const items = document.getElementById('spItems');
+        const summary = document.getElementById('shortlistSummary');
+
+        count.textContent = list.length;
+        fab.classList.toggle('show', list.length > 0);
+
+        items.innerHTML = list.length
+            ? list.map((it,i) => `<div class="sp-item"><span>${it.name}${it.code ? ' — '+it.code : ''}</span><button class="rm" data-i="${i}">Remove</button></div>`).join('')
+            : '<div class="sp-empty">Nothing saved yet. Tap + on any design to add it here.</div>';
+
+        items.querySelectorAll('.rm').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const list2 = getShortlist();
+                list2.splice(parseInt(btn.dataset.i), 1);
+                setShortlist(list2);
+            });
+        });
+
+        // Sync save-btn visual state on cards
+        document.querySelectorAll('.save-btn').forEach(b => {
+            const match = list.some(it => it.name === b.dataset.name && it.code === b.dataset.code);
+            b.classList.toggle('saved', match);
+        });
+
+        // Update contact section summary
+        if (list.length) {
+            summary.classList.add('show');
+            summary.innerHTML = '<strong>' + list.length + ' design(s) saved:</strong> ' + list.map(i => i.name).join(', ');
+        } else {
+            summary.classList.remove('show');
+        }
+
+        // Auto-check matching collection boxes
+        const cats = [...new Set(list.map(i => i.cat))];
+        document.querySelectorAll('input[name="collections"]').forEach(cb => {
+            const map = {doorskin:'doorskin', acrylic:'synergy', satvario:'satvario', marble:'marble'};
+            if (cats.some(c => map[c] === cb.value)) cb.checked = true;
+        });
+    }
+
+    document.querySelectorAll('.save-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = { name: btn.dataset.name, code: btn.dataset.code, cat: btn.dataset.cat };
+            let list = getShortlist();
+            const idx = list.findIndex(i => i.name === item.name && i.code === item.code);
+            if (idx > -1) {
+                list.splice(idx, 1);
+                if (window.posthog) posthog.capture('product_unshortlisted', item);
+            } else {
+                list.push(item);
+                if (window.posthog) posthog.capture('product_shortlisted', item);
+            }
+            setShortlist(list);
+        });
+    });
+
+    const spPanel = document.getElementById('spPanel');
+    const spOverlay = document.getElementById('spOverlay');
+    document.getElementById('shortlistFab').addEventListener('click', () => { spPanel.classList.add('open'); spOverlay.classList.add('show'); });
+    document.getElementById('spClose').addEventListener('click', () => { spPanel.classList.remove('open'); spOverlay.classList.remove('show'); });
+    spOverlay.addEventListener('click', () => { spPanel.classList.remove('open'); spOverlay.classList.remove('show'); });
+    document.getElementById('spSend').addEventListener('click', () => { spPanel.classList.remove('open'); spOverlay.classList.remove('show'); });
+
+    renderShortlist();
+
+    // ---------- UTM / source capture (for lead attribution) ----------
+    function getUtmParams(){
+        const p = new URLSearchParams(window.location.search);
+        return {
+            utm_source: p.get('utm_source') || '',
+            utm_medium: p.get('utm_medium') || '',
+            utm_campaign: p.get('utm_campaign') || '',
+            referrer: document.referrer || 'direct'
+        };
+    }
+
+    // ---------- Enquiry form submit ----------
+    document.getElementById('enquiryForm').addEventListener('submit', function(event){
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const role = document.getElementById('role').value;
+        const project = document.getElementById('project').value;
+        const collections = Array.from(document.querySelectorAll('input[name="collections"]:checked')).map(cb => cb.value).join(', ');
+        const shortlist = getShortlist();
+        const shortlistText = shortlist.length ? shortlist.map(i => `${i.name}${i.code ? ' ('+i.code+')' : ''}`).join('; ') : 'None saved';
+        const utm = getUtmParams();
+
+        const body = `New Design Consultation Request\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nRole: ${role}\n\nProject Details:\n${project}\n\nInterested Collections: ${collections || 'Not specified'}\n\nSaved Designs: ${shortlistText}\n\nSource: ${utm.utm_source || utm.referrer}\n\n---\nSubmitted from the Cult & Habitat website.`;
+
+        if (window.posthog) {
+            posthog.capture('enquiry_submitted', {
+                role, collections, shortlist_count: shortlist.length,
+                shortlist_items: shortlist.map(i => i.name),
+                utm_source: utm.utm_source, utm_medium: utm.utm_medium, utm_campaign: utm.utm_campaign,
+                referrer: utm.referrer
+            });
+            posthog.identify(email, { name, email, phone, role });
+        }
+
+        window.location.href = `mailto:brucewayne180710@gmail.com?subject=Design Consultation Request from ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+        alert("Thanks! Opening your email client to send the request. If it doesn't open, email us directly at brucewayne180710@gmail.com");
+    });
+</script>
 </body>
 </html>
